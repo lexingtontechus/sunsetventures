@@ -9,8 +9,8 @@ export default function Terms() {
   return (
     <>
       <SEO
-        title="Terms | 0xaloysius"
-        description="Terms 0xaloysius. Early-stage VC in biotech, cleantech, foodtech & mobility."
+        title="Terms | Sunset Ventures"
+        description="Terms Sunset Ventures. Early-stage VC in biotech, cleantech, foodtech & mobility."
       />
       <Navbar transparent />
       <div className="h-full w-full">
@@ -43,9 +43,9 @@ export default function Terms() {
                   <div className="text-sm text-trueZinc-700">
                     These Terms of Use constitute a legally binding agreement
                     made between you, whether personally or on behalf of an
-                    entity (“you”) and 0xaloysius LLC, doing business as
-                    0xaloysius (“0xaloysius“, “we”, “us”, or “our”), concerning
-                    your access to and use of the http://0xaloysius.x website as
+                    entity (“you”) and Sunset Ventures Inc, doing business as
+                    Sunset Ventures (“Sunset Ventures“, “we”, “us”, or “our”), concerning
+                    your access to and use of the http://sunsetventures.nft website as
                     well as any other media form, media channel, mobile website
                     or mobile application related, linked, or otherwise
                     connected thereto (collectively, the “Site”). The Site
@@ -600,7 +600,7 @@ export default function Terms() {
                   <Collapse title="PRIVACY POLICY">
                     <div className="text-sm text-trueZinc-700">
                       We care about data privacy and security. Please review our
-                      Privacy Policy: https://0xaloysius.x/privacy. By using the
+                      Privacy Policy: https://sunsetventures.nft/privacy. By using the
                       Site or the Marketplace Offerings, you agree to be bound
                       by our Privacy Policy, which is incorporated into these
                       Terms of Use. Please be advised the Site and the
@@ -939,7 +939,7 @@ export default function Terms() {
                       please contact us at:
                     </div>
                     <div className="text-sm text-trueZinc-700">
-                      0xaloysius LLC.
+                      Sunset Ventures Inc.
                       <br />
                       16192 Coastal Highway
                       <br />

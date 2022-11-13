@@ -12,17 +12,17 @@ import Footer from "../components/footer";
 export default function Home() {
   return (
     <>
-      <SEO title="Home | 0xaloysius" description="Home 0xaloysius." />
+      <SEO title="Home | Sunset Ventures" description="Home Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX." />
       <Navbar />
       <Hero />
-      <SectionTitle pretitle="Our Story" title="The 0xaloysius Portfolio">
+      <SectionTitle pretitle="Our Story" title="Sunset Ventures">
         The portfolio is comprised of five (5) companies & one (1) non-profit.
         Each company is focused on a specific mission and innovations within its
         industry.
       </SectionTitle>
       <Cta />
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        How can an organization partner with 0xaloysius?
+        How can an organization partner with Sunset Ventures?
       </SectionTitle>
       <Faq />
 

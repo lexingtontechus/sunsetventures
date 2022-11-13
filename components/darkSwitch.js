@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faLightbulb } from "@fortawesome/free-solid-svg-icons";
+import { faPiggyBank, faLightbulb } from "@fortawesome/free-solid-svg-icons";
 
 const ThemeChanger = () => {
   const [mounted, setMounted] = useState(false);
@@ -20,7 +20,7 @@ const ThemeChanger = () => {
           className="rounded-full outline-none focus:outline-none fill-truePurple-900 dark:fill-yellow-300 "
         >
           <span className="sr-only">Light Mode</span>
-          <Surf />
+          <FontAwesomeIcon icon={faPiggyBank} className="text-trueAmber-300" />
         </button>
       ) : (
         <button
@@ -28,7 +28,7 @@ const ThemeChanger = () => {
           className="fill-truePurple-900 dark:fill-yellow-300 rounded-full outline-none focus:outline-none focus-visible:ring focus-visible:ring-orange-100 focus:ring-opacity-20"
         >
           <span className="sr-only">Dark Mode</span>
-          <Beach />
+          <FontAwesomeIcon icon={faPiggyBank} className="text-trueAmber-600" />
         </button>
       )}
     </div>

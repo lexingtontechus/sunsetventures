@@ -27,7 +27,10 @@ import PopupWidget from "../components/popupWidget";
 export default function About() {
   return (
     <>
-      <SEO title="About | 0xaloysius" description="About 0xaloysius." />
+      <SEO
+        title="About | Sunset Ventures"
+        description="About Sunset Ventures."
+      />
       <Navbar />
       <main className="about-page h-full">
         <section className="relative py-16 ">
@@ -43,7 +46,7 @@ export default function About() {
                       >
                         <Image
                           src="https://storageapi.fleek.co/47c43c10-6c0c-4b3b-a520-683839c214cf-bucket/assets/img/avatar.png"
-                          alt="0xaloysius Avatar"
+                          alt="Sunset Ventures Avatar"
                           priority="true"
                         />
                       </Link>
@@ -69,28 +72,10 @@ export default function About() {
                           type="button"
                         >
                           <Link
-                            href="https://www.linkedin.com/in/0xaloysius/"
+                            href="https://www.linkedin.com/company/Sunset-Ventures/"
                             target="_blank"
                             rel="noreferrer"
-                            alt="LinkedIn"
-                          >
-                            <FontAwesomeIcon
-                              icon={faLinkedin}
-                              className="text-trueZinc-100"
-                            />
-                          </Link>
-                        </button>
-                      </div>
-                      <div className="mr-4 p-3 text-center">
-                        <button
-                          className="bg-truePurple-600 text-trueZinc-100 w-10 h-10 rounded-full outline-none focus:outline-none mr-1 mb-1"
-                          type="button"
-                        >
-                          <Link
-                            href="https://www.linkedin.com/company/0xaloysius/"
-                            target="_blank"
-                            rel="noreferrer"
-                            alt="LinkedIn Company 0xaloysius"
+                            alt="LinkedIn Company Sunset Ventures"
                           >
                             <FontAwesomeIcon
                               icon={faLinkedinIn}
@@ -107,7 +92,7 @@ export default function About() {
                           type="button"
                         >
                           <Link
-                            href="https://ud.me/0xaloysius.x"
+                            href="https://ud.me/sunsetventures.nft"
                             target="_blank"
                             rel="noreferrer"
                             alt="Unstoppable Domains"
@@ -156,7 +141,7 @@ export default function About() {
                     </svg>
                   </h3>
                   <p className="font-semibold text-trueZinc-700 dark:text-trueZinc-100 mb-4">
-                    Technologist. Entrepeneur.
+                    Investment Management.
                   </p>
                   <div className="text-sm leading-normal mt-0 my-4 text-trueZinc-700 dark:text-trueZinc-100 font-bold uppercase">
                     <FontAwesomeIcon
@@ -172,13 +157,13 @@ export default function About() {
                       className="mr-2 text-lg text-trueZinc-700 dark:text-trueZinc-100"
                       aria-hidden="true"
                     />
-                    <span>0xaloysius@skiff.com</span>
+                    <span>sunsetventures@skiff.com</span>
                   </div>
 
                   <div className="text-trueZinc-700 dark:text-trueZinc-100 mx-4">
                     <p className="italic mt-2 ">
-                      Building strategic partnerships with 0xaloysius portfolio
-                      businesses.
+                      Building strategic partnerships with Sunset Ventures
+                      portfolio businesses.
                     </p>
                   </div>
                 </div>
@@ -199,7 +184,7 @@ export default function About() {
                             className="mr-2 text-lg text-trueZinc-700 dark:text-trueZinc-100 "
                             aria-hidden="true"
                           />
-                          Renewalable energy solutions.
+                          Forex & Currency ETF
                         </p>
                         <p className="my-4">
                           <FontAwesomeIcon
@@ -207,7 +192,7 @@ export default function About() {
                             className="mr-2 text-lg text-trueZinc-700 dark:text-trueZinc-100 "
                             aria-hidden="true"
                           />
-                          Sustainable agritech systems.
+                          Crypto ETF
                         </p>
                         <p className="my-4">
                           <FontAwesomeIcon
@@ -215,7 +200,7 @@ export default function About() {
                             className="mr-2 text-lg text-trueZinc-700 dark:text-trueZinc-100"
                             aria-hidden="true"
                           />
-                          EV Startups.
+                          Quant Algorithmic Development
                         </p>
                         <p className="my-4">
                           <FontAwesomeIcon
@@ -223,7 +208,7 @@ export default function About() {
                             className="mr-2 text-lg text-trueZinc-700 dark:text-trueZinc-100"
                             aria-hidden="true"
                           />
-                          WEB3 & gaming.
+                          WEB3 Trading Platform
                         </p>
                       </div>
                     </div>
