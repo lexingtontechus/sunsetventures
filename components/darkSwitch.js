@@ -17,7 +17,7 @@ const ThemeChanger = () => {
       {theme === "dark" ? (
         <button
           onClick={() => setTheme("light")}
-          className="rounded-full outline-none focus:outline-none fill-truePurple-900 dark:fill-yellow-300 "
+          className="rounded-full outline-none focus:outline-none"
         >
           <span className="sr-only">Light Mode</span>
           <FontAwesomeIcon icon={faPiggyBank} className="text-trueAmber-300" />

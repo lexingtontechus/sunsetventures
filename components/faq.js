@@ -17,7 +17,7 @@ export default function Faq() {
                     <ChevronUpIcon
                       className={`${
                         open ? "transform rotate-180" : ""
-                      } w-5 h-5 text-truePurple-700`}
+                      } w-5 h-5 text-trueAmber-600 dark:text-trueAmber-300`}
                     />
                   </Disclosure.Button>
                   <Disclosure.Panel className="px-4 pt-4 pb-2 text-trueZinc-700 dark:text-trueZinc-100">
@@ -35,9 +35,9 @@ export default function Faq() {
 
 const faqdata = [
   {
-    question: "How do I work with Sunset Ventures",
+    question: "What products & services does Sunset Ventures offer?",
     answer:
-      "We have several retail products and commercially licensed trading strategies & algorithms to grow your own trading portfolio.",
+      "We have several retail products and commercially licensed trading strategies & algorithms to grow your own trading portfolio. We build custom algorithms and AI/ML engines per your specifications. ",
   },
   {
     question: "Is Sunset Ventures hiring?",
