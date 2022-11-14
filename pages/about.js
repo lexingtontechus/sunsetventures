@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLocationDot,
   faAt,
-  faPlugCircleBolt,
-  faBuildingWheat,
-  faCompass,
-  faGamepad,
   faU,
+  faMoneyBillWave,
+  faBitcoinSign,
+  faBrain,
+  faGamepad,
 } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 //import Image from "next/image";
@@ -30,14 +30,14 @@ export default function About() {
       <main className="about-page h-full">
         <section className="relative py-16 ">
           <div className="container mx-auto px-4">
-            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-xl rounded-lg mt-32 bg-gradient-to-l from-trueZinc-600 to-trueZinc-800">
+            <div className="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-xl rounded-lg mt-32 bg-gradient-to-l from-trueZinc-400 to-trueZinc-600">
               <div className="px-6">
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
                     <div className="relative -mt-32">
                       <Link
                         href="/"
-                        className="inline-flex h-content w-auto hover:border-trueZinc-100 rounded-full h-auto align-middle border-2 max-w-150-px focus:bg-trueZinc-500"
+                        className="inline-flex h-content w-auto border-trueAmber-600 hover:border-trueAmber-300 rounded-full h-auto align-middle border-2 max-w-150-px focus:bg-trueZinc-500"
                       >
                         <Brand />
                       </Link>
@@ -59,7 +59,7 @@ export default function About() {
                     <div className="flex justify-center py-4 lg:pt-4 pt-8">
                       <div className="mr-4 p-3 text-center">
                         <button
-                          className="bg-trueZinc-100 text-trueZinc-100 w-10 h-10 rounded-full outline-none focus:outline-none mr-1 mb-1"
+                          className="bg-trueAmber-600 text-trueZinc-100 w-10 h-10 rounded-full outline-none focus:outline-none mr-1 mb-1"
                           type="button"
                         >
                           <Link
@@ -143,8 +143,7 @@ export default function About() {
 
                   <div className="text-trueZinc-700 dark:text-trueZinc-100 mx-4">
                     <p className="italic mt-2 ">
-                      Building strategic partnerships with Sunset Ventures
-                      portfolio businesses.
+                      Building the investment portfolios of our clients & partners.
                     </p>
                   </div>
                 </div>
@@ -152,16 +151,15 @@ export default function About() {
                   <div className="flex flex-wrap justify-center">
                     <div className="w-full lg:w-9/12 px-4">
                       <h3 className="text-xl font-semibold leading-normal my-2 text-trueZinc-700 dark:text-trueZinc-100">
-                        Creating bold investment strategies in innovative
-                        sustainable & diverse companies & platforms.
+                        Creating innovative investment strategies & growing our next-gen AI Quant platform.
                       </h3>
                       <h3 className="text-xl font-semibold leading-normal my-4 text-trueZinc-700 dark:text-trueZinc-100">
-                        Portfolio & industry focus on,
+                        Our services span across,
                       </h3>
                       <div className="my-8 text-lg leading-relaxed text-trueZinc-700 dark:text-trueZinc-100">
                         <p className="my-4">
                           <FontAwesomeIcon
-                            icon={faPlugCircleBolt}
+                            icon={faMoneyBillWave}
                             className="mr-2 text-lg text-trueZinc-700 dark:text-trueZinc-100 "
                             aria-hidden="true"
                           />
@@ -169,7 +167,7 @@ export default function About() {
                         </p>
                         <p className="my-4">
                           <FontAwesomeIcon
-                            icon={faBuildingWheat}
+                            icon={faBitcoinSign}
                             className="mr-2 text-lg text-trueZinc-700 dark:text-trueZinc-100 "
                             aria-hidden="true"
                           />
@@ -177,7 +175,7 @@ export default function About() {
                         </p>
                         <p className="my-4">
                           <FontAwesomeIcon
-                            icon={faCompass}
+                            icon={faBrain}
                             className="mr-2 text-lg text-trueZinc-700 dark:text-trueZinc-100"
                             aria-hidden="true"
                           />
@@ -189,7 +187,7 @@ export default function About() {
                             className="mr-2 text-lg text-trueZinc-700 dark:text-trueZinc-100"
                             aria-hidden="true"
                           />
-                          WEB3 Trading Platform
+                          Gaming & Sports Betting
                         </p>
                       </div>
                     </div>
