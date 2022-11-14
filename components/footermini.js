@@ -8,11 +8,11 @@ export default function FooterMini() {
   const footer = [
     { name: "About", href: "/about" },
     { name: "Profile", href: "/profile" },
-    { name: "Contact", href: "/contact" }
+    { name: "Contact", href: "/contact" },
   ];
   const legal = [
     { name: "Terms", href: "/terms" },
-    { name: "Privacy", href: "/privacy" }
+    { name: "Privacy", href: "/privacy" },
   ];
 
   return (
@@ -22,14 +22,10 @@ export default function FooterMini() {
           <p className="text-sm text-trueGray-700 dark:text-trueGray-100">
             Copyright © {new Date().getFullYear()}.{" "}
             <span className="px-2">
-              <Link href="/terms">
-Terms
-              </Link>
+              <Link href="/terms">Terms</Link>
             </span>
             <span className="px-2">
-              <Link href="/privacy">
-           Privacy
-              </Link>
+              <Link href="/privacy">Privacy</Link>
             </span>
           </p>
         </div>
@@ -48,11 +44,11 @@ const Backlink = () => {
         type="button"
       >
         <Image
-          alt="0xaloysius"
+          alt="Sunset Ventures"
           className="w-5 mr-1"
-          src="/img/logo.svg"
+          src="/img/logo-sunset.svg"
         />
-        0xaloysius
+        Sunset Ventures
       </button>
     </>
   );

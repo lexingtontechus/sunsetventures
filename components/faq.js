@@ -35,17 +35,18 @@ export default function Faq() {
 
 const faqdata = [
   {
-    question: "How do I work with 0xaloysius?",
+    question: "How do I work with Sunset Ventures",
     answer:
-      "The 0x portfolio partners with & employs people with a wide range of skills & experince.",
+      "We have several retail products and commercially licensed trading strategies & algorithms to grow your own trading portfolio.",
   },
   {
-    question: "Is 0xaloysius hiring?",
+    question: "Is Sunset Ventures hiring?",
     answer:
-      "Our portfolio businesses are hiring! Book a meeting with me to discuss new possibilities.",
+      "We have openings for data scientists and experienced traders. Book a meeting to discuss new possibilities.",
   },
   {
-    question: "Who is 0xaloysius?",
-    answer: "Book an introduction call with me!",
+    question: "Who is Sunset Ventures?",
+    answer:
+      "We are a team of investors who have build a trading platform using our prioprietary AI driven algorithms.",
   },
 ];

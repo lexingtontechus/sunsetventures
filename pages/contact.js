@@ -82,17 +82,17 @@ export default function Contact() {
                 <form onSubmit={handleSubmit(onSubmit)} noValidate>
                   <input
                     type="hidden"
-                    value="c4c17b77-17f0-4af1-9718-aecafb0ae7e8"
+                    value="e808fa95-79c8-42bc-8456-267681b87e7d"
                     {...register("apikey")}
                   />
                   <input
                     type="hidden"
-                    value={`${userName} sent a message`}
+                    value={`${userName} Requests A Demo`}
                     {...register("subject")}
                   />
                   <input
                     type="hidden"
-                    value="0xaloysius"
+                    value="Sunset Ventures"
                     {...register("from_name")}
                   />
                   <input
@@ -224,19 +224,7 @@ export default function Contact() {
                   <p
                     className="text-xs text-center text-trueZinc-400"
                     id="result"
-                  >
-                    <span>
-                      Powered by{" "}
-                      <a
-                        href="https://Web3Forms.com"
-                        className="text-trueZinc-600"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Web3Forms
-                      </a>
-                    </span>
-                  </p>
+                  ></p>
                 </form>
               )}
 

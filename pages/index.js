@@ -3,6 +3,9 @@ import SectionTitle from "../components/sectionTitle";
 import SEO from "../components/seo";
 //import Video from "../components/video";
 //import Testimonials from "../components/testimonials";
+import SmartFX from "../components/smartfx";
+import { smartfxOne, smartfxTwo } from "../components/smartfxdata";
+
 import Cta from "../components/cta";
 import Faq from "../components/faq";
 import PopupWidget from "../components/popupWidget";
@@ -16,10 +19,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <SectionTitle pretitle="Our Story" title="Sunset Ventures">
-        The portfolio is comprised of five (5) companies & one (1) non-profit.
-        Each company is focused on a specific mission and innovations within its
-        industry.
+        Our primary goal is to establish a wealth strategy for our clients through the use of Artificial Intelligence-driven quantitative trading.
       </SectionTitle>
+      <SmartFX data={smartfxOne}/>
+      <SmartFX imgPos="right" data={smartfxTwo} />
       <Cta />
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
         How can an organization partner with Sunset Ventures?

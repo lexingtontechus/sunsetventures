@@ -69,29 +69,17 @@ export default function Navbar() {
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            href="/profile"
+                            href="/about"
                             className={classNames(
                               active ? "bg-trueZinc-100" : "",
                               "block px-4 py-2 text-sm text-trueZinc-700"
                             )}
                           >
-                            Profile
+                            About
                           </Link>
                         )}
                       </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            href="/portfolio"
-                            className={classNames(
-                              active ? "bg-trueZinc-100" : "",
-                              "block px-4 py-2 text-sm text-trueZinc-700"
-                            )}
-                          >
-                            Porfolio
-                          </Link>
-                        )}
-                      </Menu.Item>
+
                       <Menu.Item>
                         {({ active }) => (
                           <Link
