@@ -7,7 +7,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "**.fleek.co/**",
-        pathname: "/47c43c10-6c0c-4b3b-a520-683839c214cf-bucket/assets/img/**",
+        pathname: "/9ec37732-832c-4af1-a4fa-cc87c28c6dae-bucket/assets/img/**",
       },
     ],
     domains: ["storageapi.fleek.co"],

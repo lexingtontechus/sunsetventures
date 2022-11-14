@@ -5,6 +5,6 @@
 @layer base {
   html,
   body {
-    @apply dark:bg-trueZinc-900;
+    @apply dark:bg-trueEmerald-800;
   }
 }

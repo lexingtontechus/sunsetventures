@@ -1,15 +1,15 @@
-![image](https://storageapi.fleek.co/47c43c10-6c0c-4b3b-a520-683839c214cf-bucket/assets/img/0xaloysius.svg)
+![image](https://storageapi.fleek.co/9ec37732-832c-4af1-a4fa-cc87c28c6dae-bucket/assets/img/logo-sunset.svg)
 
 ### 1\. Clone this Repository
 
 ```bash
-git clone https://github.com/0xaloysius/0xaloysius.git
+git clone https://github.com/sunset-ventures/
 ```
 
 ### 2\. Navigate to the directory
 
 ```
-cd 0xaloysius
+cd sunset-ventures
 ```
 
 ### 3\. Install dependencies
@@ -32,8 +32,8 @@ npm run dev
 
 Deploy this template using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/0xaloysius/0xaloysius)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/sunset-ventures/sunsetventures)
 
 ## Author
 
-0xaloysus Inc. ( [@0xaloysius](https://0xaloysius.x/) )
+0xaloysus Inc. ( [@sunset-ventures](https://sunsetventures.nft/) )

@@ -26,7 +26,7 @@ class MyDocument extends Document {
           <meta property="og:description" content="0xaloysius. " />
           <meta
             property="og:image"
-            content="https://storageapi.fleek.co/47c43c10-6c0c-4b3b-a520-683839c214cf-bucket/assets/img/0xaloysius.svg"
+            content="https://storageapi.fleek.co/9ec37732-832c-4af1-a4fa-cc87c28c6dae-bucket/assets/img/logo-sunset.svg"
           />
 
           <meta property="twitter:card" content="summary_large_image" />
@@ -41,7 +41,7 @@ class MyDocument extends Document {
           />
           <meta
             property="twitter:image"
-            content="https://storageapi.fleek.co/47c43c10-6c0c-4b3b-a520-683839c214cf-bucket/assets/img/0xaloysius.svg"
+            content="https://storageapi.fleek.co/9ec37732-832c-4af1-a4fa-cc87c28c6dae-bucket/assets/img/logo-sunset.svg"
           />
 
           <link
@@ -51,7 +51,7 @@ class MyDocument extends Document {
 
           <link
             rel="icon"
-            href="https://storageapi.fleek.co/47c43c10-6c0c-4b3b-a520-683839c214cf-bucket/assets/img/logoyellow-0xaloysius.svg"
+            href="https://storageapi.fleek.co/9ec37732-832c-4af1-a4fa-cc87c28c6dae-bucket/assets/img/logo-sunset.svg"
           />
         </Head>
         <body className="lightmode dark:darkmode">
