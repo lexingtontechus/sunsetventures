@@ -133,7 +133,7 @@ export default function PopupWidget() {
                       />
                       <input
                         type="hidden"
-                        value="0xaloysius"
+                        value="Sunset Ventures"
                         {...register("from_name")}
                       />
                       <input
