@@ -65,8 +65,8 @@ export default function UserDropDown() {
                                 "block px-4 py-2 text-sm text-trueZinc-700"
                               )}
                             >
-                              <div className="flex inline-block">
-                                <div className="text-right">{user.name}</div>
+                              <div className="flex-wrap text-right">
+                                {user.name}
                               </div>
                             </Link>
                           )}

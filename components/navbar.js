@@ -73,7 +73,7 @@ export default function Navbar() {
                         <Menu.Item>
                           {({ active }) => (
                             // eslint-disable-next-line
-                            <a
+                            <Link
                               href="/api/auth/login"
                               className={classNames(
                                 active ? "bg-trueZinc-100" : "",
@@ -81,7 +81,7 @@ export default function Navbar() {
                               )}
                             >
                               Login
-                            </a>
+                            </Link>
                           )}
                         </Menu.Item>
                       )}

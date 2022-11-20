@@ -22,12 +22,12 @@ export default function Footer() {
             <div className="w-full md:w-8/12 px-4">
               <ul className="flex flex-wrap list-none md:justify-end  justify-center">
                 <li>
-                  <a
+                  <Link
                     href="https://www.creative-tim.com?ref=nnjs-footer-admin"
                     className="text-trueZinc-600 hover:text-trueZinc-800 text-sm font-semibold block py-1 px-3"
                   >
                     Sunset Ventures
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link

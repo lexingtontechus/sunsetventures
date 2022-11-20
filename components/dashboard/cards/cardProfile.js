@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 // components
 
 export default function CardProfile() {
@@ -69,13 +70,13 @@ export default function CardProfile() {
                   feel with a solid groove structure. An artist of considerable
                   range.
                 </p>
-                <a
+                <Link
                   href="#pablo"
                   className="font-normal text-lightBlue-500"
                   onClick={(e) => e.preventDefault()}
                 >
                   Show more
-                </a>
+                </Link>
               </div>
             </div>
           </div>

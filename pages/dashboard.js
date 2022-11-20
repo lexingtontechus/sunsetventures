@@ -15,6 +15,8 @@ import Navbar from "../components/dashboard/navbar";
 import Sidebar from "../components/dashboard/sidebar";
 import Footer from "../components/dashboard/footer";
 
+import HeaderStats from "../components/dashboard/headerStats";
+
 //import CardLineChart from "../components/dashboard/cards/cardLineChart.js";
 //import CardBarChart from "../components/dashboard/cards/cardBarChart.js";
 //import CardPageVisits from "../components/dashboard/cards/cardPageVisits.js";
@@ -32,14 +34,14 @@ function Dashboard() {
       {user && (
         <>
           <SEO
-            title="Profile | Sunset Ventures"
+            title="Dashboard | Sunset Ventures"
             description="Profile Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
           />
           <Sidebar />
           <div className="relative md:ml-64 h-full mx-auto text-trueZinc-700 dark:text-trueZinc-100">
             <Navbar />
             {/* Header */}
-            {/*<HeaderStats />*/}
+            <HeaderStats />
             <div className="relative mt-8 px-4 md:px-10 mx-auto w-full -m-24">
               <div className="flex flex-wrap">
                 <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
