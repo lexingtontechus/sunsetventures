@@ -43,11 +43,11 @@ const Backlink = () => {
         type="button"
       >
         <Image
-          alt="0xaloysius"
+          alt="Sunset Ventures"
           className="w-5 mr-1"
           src="/img/logo.svg"
         />
-        0xaloysius
+        Sunset Ventures
       </button>
     </>
   );

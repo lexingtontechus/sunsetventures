@@ -21,9 +21,9 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://0xaloysius.x/" />
-          <meta property="og:title" content="0xaloysius LLC." />
-          <meta property="og:description" content="0xaloysius. " />
+          <meta property="og:url" content="https://sunsetventures.nft/" />
+          <meta property="og:title" content="Sunset Ventures Inc." />
+          <meta property="og:description" content="Sunset Ventures Inc." />
           <meta
             property="og:image"
             content="https://storageapi.fleek.co/9ec37732-832c-4af1-a4fa-cc87c28c6dae-bucket/assets/img/logo-sunset.svg"
@@ -32,12 +32,12 @@ class MyDocument extends Document {
           <meta property="twitter:card" content="summary_large_image" />
           <meta
             property="twitter:url"
-            content="https://twitter.com/0xaloysius"
+            content="https://twitter.com/sunsetventuresinc"
           />
-          <meta property="twitter:title" content="0xaloysius" />
+          <meta property="twitter:title" content="sunsetventuresinc" />
           <meta
             property="twitter:description"
-            content="Early-stage VC in biotech, cleantech, foodtech & mobility."
+            content="Quantitative algorithm trading."
           />
           <meta
             property="twitter:image"

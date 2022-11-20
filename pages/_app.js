@@ -1,3 +1,4 @@
+import { UserProvider } from '@auth0/nextjs-auth0';
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -31,12 +32,14 @@ function MyApp({ Component, pageProps }) {
     })();
   }, []);
   return (
+    <UserProvider>
     <ThemeProvider attribute="class">
       <NextUIProvider>
         <SEO />
         <Component {...pageProps} />
       </NextUIProvider>
     </ThemeProvider>
+    </UserProvider>
   );
 }
 

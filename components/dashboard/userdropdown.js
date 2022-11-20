@@ -5,8 +5,6 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 
-import ThemeChanger from "./darkSwitch";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
@@ -26,7 +24,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Navbar() {
+export default function UserDropDown() {
   const { user, isLoading } = useUser();
   return (
     <Disclosure as="nav">
@@ -34,19 +32,6 @@ export default function Navbar() {
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
-              </div>
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div className="flex flex-shrink-0 items-center">
-                  <Link
-                    href="/"
-                    className="inline-flex h-content w-auto fill-trueZinc-900 dark:fill-trueZinc-100 stroke-2"
-                  >
-                    <Brand />
-                  </Link>
-                </div>
-              </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative mx-3">
@@ -69,22 +54,6 @@ export default function Navbar() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-trueZinc-50 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      {!isLoading && !user && (
-                        <Menu.Item>
-                          {({ active }) => (
-                            // eslint-disable-next-line
-                            <Link
-                              href="/api/auth/login"
-                              className={classNames(
-                                active ? "bg-trueZinc-100" : "",
-                                "block px-4 py-2 text-sm text-trueZinc-700"
-                              )}
-                            >
-                              Login
-                            </Link>
-                          )}
-                        </Menu.Item>
-                      )}
                       {user && (
                         <Menu.Item>
                           {({ active }) => (
@@ -96,15 +65,8 @@ export default function Navbar() {
                                 "block px-4 py-2 text-sm text-trueZinc-700"
                               )}
                             >
-                              <div>
-                                <Image
-                                  className="rounded-full"
-                                  src={user.picture}
-                                  width={25}
-                                  height={25}
-                                  alt="Profile"
-                                />
-                                <span>{user.name}</span>
+                              <div className="flex-wrap text-right">
+                                {user.name}
                               </div>
                             </Link>
                           )}
@@ -113,35 +75,19 @@ export default function Navbar() {
                       <Menu.Item>
                         {({ active }) => (
                           <Link
-                            href="/about"
+                            href="/api/auth/logout"
                             className={classNames(
                               active ? "bg-trueZinc-100" : "",
-                              "block px-4 py-2 text-sm text-trueZinc-700"
+                              "block px-4 py-2 text-sm text-trueZinc-700 text-right"
                             )}
                           >
-                            About
-                          </Link>
-                        )}
-                      </Menu.Item>
-
-                      <Menu.Item>
-                        {({ active }) => (
-                          <Link
-                            href="/contact"
-                            className={classNames(
-                              active ? "bg-trueZinc-100" : "",
-                              "block px-4 py-2 text-sm text-trueZinc-700"
-                            )}
-                          >
-                            Contact
+                            Logout
                           </Link>
                         )}
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
                 </Menu>
-
-                <ThemeChanger />
               </div>
             </div>
           </div>
