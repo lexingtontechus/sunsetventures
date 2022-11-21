@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import Link from "next/image";
+
 import {
-    
   faShieldCat,
   faPepperHot,
   faSeedling,
@@ -13,7 +14,11 @@ import Navbar from "../components/navbar";
 import SEO from "../components/seo";
 import SectionTitle from "../components/sectionTitle";
 import PopupWidget from "../components/popupWidget";
-export default function Portfolio() {
+
+import ProductLine from "../components/products";
+import { productOne, productTwo } from "../components/productsdata";
+
+export default function Products() {
   return (
     <>
       <SEO
@@ -26,14 +31,12 @@ export default function Portfolio() {
           &quot;Our mission is to support Southern Californian start-ups and
           communities to create sustainable, renewable & secure platforms.&quot;
         </SectionTitle>
+        <ProductLine data={productOne} />
+        <ProductLine imgPos="right" data={productTwo} />
         <div className="container  items-center p-8 mx-auto w-full place-content-center">
           <div className="flex flex-wrap sm:flex-no-wrap items-center justify-between w-full h-auto">
-            <div className="w-full sm:w-1/3 p-4">
-              <Card1 />
-            </div>
-            <div className="w-full sm:w-1/3 p-4">
-              <Card2 />
-            </div>
+            <div className="w-full sm:w-10/12 p-4"></div>
+            <div className="w-full sm:w-10/12 p-4"></div>
             <div className="w-full sm:w-1/3 p-4">
               <Card3 />
             </div>
@@ -69,11 +72,8 @@ function Card1() {
           alt="Growth"
           priority={true}
         />
-        <p className="text-trueGray-100 text-md mb-4">
-          Low Risk. <br />
-          Optimized Returns. <br />
-          Low Leverage.
-        </p>
+
+        <p className="text-trueGray-100 text-md mb-4"></p>
       </div>
       <div className="border-t border-trueGray-200 py-3 w-full text-sm text-trueGray-100">
         <FontAwesomeIcon
