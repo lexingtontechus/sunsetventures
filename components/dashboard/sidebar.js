@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 //import NotificationDropdown from "components/Dropdowns/NotificationDropdown.js";
-import products from "./products";
+//import products from "./products";
 
 export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
