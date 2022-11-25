@@ -66,11 +66,30 @@ export default function UserDropDown() {
                               )}
                             >
                               <div className="flex-wrap text-right">
-                                {user.name}
+                             Dashboard
                               </div>
                             </Link>
                           )}
                         </Menu.Item>
+                      )}
+                        {user && (
+                        <Menu.Item>
+                          {({ active }) => (
+                            // eslint-disable-next-line
+                            <Link
+                              href="/profile"
+                              className={classNames(
+                                active ? "bg-trueZinc-100" : "",
+                                "block px-4 py-2 text-sm text-trueZinc-700"
+                              )}
+                            >
+                              <div className="flex-wrap text-right">
+                                Profile
+                              </div>
+                            </Link>
+                          )}
+                        </Menu.Item>
+                        
                       )}
                       <Menu.Item>
                         {({ active }) => (
