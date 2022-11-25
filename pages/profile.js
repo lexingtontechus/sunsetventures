@@ -37,12 +37,23 @@ function Profile() {
           />
           <Sidebar />
           <div className="relative md:ml-64 h-full mx-auto text-trueZinc-700 dark:text-trueZinc-100">
+            <Navbar />
             {/* Header */}
             {/*<HeaderStats />*/}
             <div className="relative mt-8 px-4 md:px-10 mx-auto w-full -m-24">
               <div className="flex flex-wrap">
                 <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-                  {/*<CardLineChart />*/}Chart 1
+                  <div>
+                    <Image
+                      src={user.picture}
+                      alt={user.name}
+                      height={100}
+                      width={100}
+                      className="rounded-full"
+                    />
+                    <h2>{user.name}</h2>
+                    <p>{user.email}</p>
+                  </div>
                 </div>
                 <div className="w-full xl:w-4/12 px-4">
                   {/*<CardBarChart />*/}Chart 2
