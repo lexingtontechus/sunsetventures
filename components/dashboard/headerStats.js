@@ -8,7 +8,7 @@ export default function HeaderStats() {
   return (
     <>
       {/* Header */}
-      <div className="relative bg-trueZinc-900 md:pt-32 pb-32 pt-12">
+      <div className="relative bg-trueZinc-900 md:pt-8 pb-32 pt-8">
         <div className="px-4 md:px-10 mx-auto w-full">
           <div>
             {/* Card stats */}
@@ -28,7 +28,7 @@ export default function HeaderStats() {
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="WIN %"
-                  statTitle="2471 of 3471"
+                  statTitle="70.90%"
                   statArrow="up"
                   statPercent="71.19"
                   statPercentColor="text-trueEmerald-500"
@@ -52,7 +52,7 @@ export default function HeaderStats() {
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
                   statSubtitle="PERFORMANCE"
-                  statTitle="49,65%"
+                  statTitle="49.65%"
                   statArrow="up"
                   statPercent="12"
                   statPercentColor="text-trueEmerald-500"

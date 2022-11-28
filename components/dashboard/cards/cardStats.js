@@ -20,14 +20,14 @@ export default function CardStats({
               <h5 className="text-trueZinc-100 uppercase font-bold text-xs">
                 {statSubtitle}
               </h5>
-              <span className="font-semibold text-xl text-trueZinc-100">
+              <span className="font-semibold text-md text-trueZinc-100">
                 {statTitle}
               </span>
             </div>
             <div className="relative w-auto pl-4 flex-initial">
               <div
                 className={
-                  "text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full " +
+                  "text-trueZinc-50 p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full " +
                   statIconColor
                 }
               >
@@ -61,10 +61,10 @@ CardStats.defaultProps = {
   statTitle: "350,897",
   statArrow: "up",
   statPercent: "3.48",
-  statPercentColor: "text-emerald-500",
+  statPercentColor: "text-trueEmerald-500",
   statDescripiron: "Since last month",
   statIconName: "far fa-chart-bar",
-  statIconColor: "bg-red-500",
+  statIconColor: "bg-trueRed-500",
 };
 
 CardStats.propTypes = {

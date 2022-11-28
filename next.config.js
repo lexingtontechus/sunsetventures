@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    // Required:
+    appDir: true,
+  },
   reactStrictMode: true,
   images: {
     //domains: ["storageapi.fleek.co", "savivets.wpengine.com"],

@@ -1,11 +1,18 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+} from "chart.js";
+ChartJS.register(CategoryScale, LinearScale, BarElement);
 
 const data = {
-  labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "June"],
   datasets: [
     {
-      label: "# of Votes",
+      label: "# of Trades",
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
@@ -30,15 +37,15 @@ const data = {
 export default function CardBarChart() {
   return (
     <>
-      <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
+      <div className="relative flex flex-col min-w-0 break-words bg-trueZinc-50 w-full mb-6 shadow-lg rounded">
         <div className="rounded-t mb-0 px-4 py-3 bg-transparent">
           <div className="flex flex-wrap items-center">
             <div className="relative w-full max-w-full flex-grow flex-1">
-              <h6 className="uppercase text-trueZinc-700 dark:text-trueZinc-100 mb-1 text-xs font-semibold">
+              <h6 className="uppercase text-trueZinc-700 mb-1 text-xs font-semibold">
                 Performance
               </h6>
-              <h2 className="text-trueZinc-700 dark:text-trueZinc-100 text-xl font-semibold">
-                Total orders
+              <h2 className="text-trueZinc-700 text-xl font-semibold">
+                Total Trades
               </h2>
             </div>
           </div>
@@ -48,8 +55,8 @@ export default function CardBarChart() {
           <div className="relative h-350-px">
             <Bar
               data={data}
-              width={400}
-              height={200}
+              width={350}
+              height={350}
               options={{
                 maintainAspectRatio: false,
               }}

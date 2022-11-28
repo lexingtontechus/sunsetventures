@@ -1,4 +1,4 @@
-import { UserProvider } from '@auth0/nextjs-auth0';
+import { UserProvider } from "@auth0/nextjs-auth0";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -19,26 +19,26 @@ function MyApp({ Component, pageProps }) {
       cal("floatingButton", {
         calLink: "sunset/meeting",
         buttonText: "Book Us",
-        buttonColor: "#d97706",
-        buttonTextColor: "#f4f4f5",
+        buttonColor: "#18181b",
+        buttonTextColor: "#fafafa",
         buttonPosition: "bottom-left",
       });
       cal("ui", {
         theme: "dark",
         styles: {
-          branding: { brandColor: "#d97706" },
+          branding: { brandColor: "#18181b" },
         },
       });
     })();
   }, []);
   return (
     <UserProvider>
-    <ThemeProvider attribute="class">
-      <NextUIProvider>
-        <SEO />
-        <Component {...pageProps} />
-      </NextUIProvider>
-    </ThemeProvider>
+      <ThemeProvider attribute="class">
+        <NextUIProvider>
+          <SEO />
+          <Component {...pageProps} />
+        </NextUIProvider>
+      </ThemeProvider>
     </UserProvider>
   );
 }

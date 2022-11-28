@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
     "post-update": "yarn upgrade --latest"
   },
   "repository": {
@@ -49,6 +50,7 @@
     "next-themes": "^0.2.1",
     "npm": "^9.1.2",
     "postcss": "^8.1.10",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.0.1",
     "react-dom": "^18.2.0",

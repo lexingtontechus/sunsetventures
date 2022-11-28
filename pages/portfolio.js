@@ -28,8 +28,8 @@ function Profile() {
       {user && (
         <>
           <SEO
-            title="Profile | Sunset Ventures"
-            description="Profile Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
+            title="Portfolio | Sunset Ventures"
+            description="Portfolio Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
           />
           <LayoutDashboard>
           <div className="relative h-full mx-auto text-trueZinc-700 dark:text-trueZinc-100">
@@ -37,15 +37,7 @@ function Profile() {
               <div className="flex flex-wrap">
                 <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
                   <div>
-                    <Image
-                      src={user.picture}
-                      alt={user.name}
-                      height={100}
-                      width={100}
-                      className="rounded-full"
-                    />
-                    <h2>{user.name}</h2>
-                    <p>{user.email}</p>
+                   Your Portfolio
                   </div>
                 </div>
                 <div className="w-full xl:w-4/12 px-4">

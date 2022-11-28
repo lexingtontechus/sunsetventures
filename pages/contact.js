@@ -114,17 +114,17 @@ export default function Contact() {
                       id="full_name"
                       placeholder="John Doe"
                       {...register("name", {
-                        required: "Full name is required",
+                        requitrueRed: "Full name is requitrueRed",
                         maxLength: 80,
                       })}
                       className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-white border border-trueZinc-300 rounded-md focus:outline-none focus:ring   ${
                         errors.name
-                          ? "border-red-600 focus:border-red-600 ring-red-100"
-                          : "border-trueZinc-300 focus:border-trueAmber-600 ring-trueAmber-100"
+                          ? "border-trueRed-600 focus:border-trueRed-600 ring-trueRed-100"
+                          : "border-trueZinc-300 focus:border-trueZinc-600 ring-trueZinc-100"
                       }`}
                     />
                     {errors.name && (
-                      <div className="mt-1 text-sm text-red-400 invalid-feedback">
+                      <div className="mt-1 text-sm text-trueRed-400 invalid-feedback">
                         {errors.name.message}
                       </div>
                     )}
@@ -141,7 +141,7 @@ export default function Contact() {
                       type="email"
                       id="email"
                       {...register("email", {
-                        required: "Enter your email",
+                        requitrueRed: "Enter your email",
                         pattern: {
                           value: /^\S+@\S+$/i,
                           message: "Please enter a valid email",
@@ -150,13 +150,13 @@ export default function Contact() {
                       placeholder="you@company.com"
                       className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-white border border-trueZinc-300 rounded-md focus:outline-none focus:ring   ${
                         errors.email
-                          ? "border-red-600 focus:border-red-600 ring-red-100"
-                          : "border-trueZinc-300 focus:border-trueAmber-600 ring-trueAmber-100"
+                          ? "border-trueRed-600 focus:border-trueRed-600 ring-trueRed-100"
+                          : "border-trueZinc-300 focus:border-trueZinc-600 ring-trueZinc-100"
                       }`}
                     />
 
                     {errors.email && (
-                      <div className="mt-1 text-sm text-red-400 invalid-feedback">
+                      <div className="mt-1 text-sm text-trueRed-400 invalid-feedback">
                         {errors.email.message}
                       </div>
                     )}
@@ -174,18 +174,18 @@ export default function Contact() {
                       rows="4"
                       id="message"
                       {...register("message", {
-                        required: "Enter your Message",
+                        requitrueRed: "Enter your Message",
                       })}
                       placeholder="Your Message"
                       className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-white border border-trueZinc-300 rounded-md h-28 focus:outline-none focus:ring   ${
                         errors.message
-                          ? "border-red-600 focus:border-red-600 ring-red-100"
-                          : "border-trueZinc-300 focus:border-trueAmber-600 ring-trueAmber-100"
+                          ? "border-trueRed-600 focus:border-trueRed-600 ring-trueRed-100"
+                          : "border-trueZinc-300 focus:border-trueZinc-600 ring-trueZinc-100"
                       }`}
-                      required
+                      requitrueRed
                     ></textarea>
                     {errors.message && (
-                      <div className="mt-1 text-sm text-red-400 invalid-feedback">
+                      <div className="mt-1 text-sm text-trueRed-400 invalid-feedback">
                         {errors.message.message}
                       </div>
                     )}
@@ -193,7 +193,7 @@ export default function Contact() {
                   <div className="mb-3">
                     <button
                       type="submit"
-                      className="w-full px-3 py-4 text-white bg-trueAmber-500 rounded-md focus:bg-trueAmber-600 focus:outline-none"
+                      className="w-full px-3 py-4 text-trueZinc-50 bg-trueZinc-900 rounded-md focus:bg-trueZinc-600 focus:outline-none"
                     >
                       {isSubmitting ? (
                         <svg
@@ -234,7 +234,7 @@ export default function Contact() {
                     <svg
                       width="60"
                       height="60"
-                      className="text-green-300"
+                      className="text-trueEmerald-300"
                       viewBox="0 0 100 100"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -245,12 +245,12 @@ export default function Contact() {
                         strokeWidth="3"
                       />
                     </svg>
-                    <h3 className="py-5 text-xl text-green-500">
+                    <h3 className="py-5 text-xl text-trueEmerald-500">
                       Message sent successfully
                     </h3>
                     <p className="text-trueZinc-700 md:px-3">{Message}</p>
                     <button
-                      className="mt-6 text-trueAmber-600 focus:outline-none"
+                      className="mt-6 text-trueZinc-600 focus:outline-none"
                       onClick={() => reset()}
                     >
                       Go back
@@ -265,7 +265,7 @@ export default function Contact() {
                     width="60"
                     height="60"
                     viewBox="0 0 97 97"
-                    className="text-red-400"
+                    className="text-trueRed-400"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -276,12 +276,12 @@ export default function Contact() {
                     />
                   </svg>
 
-                  <h3 className="text-xl text-red-400 py-7">
+                  <h3 className="text-xl text-trueRed-400 py-7">
                     Oops, Something went wrong!
                   </h3>
                   <p className="text-trueZinc-700 md:px-3">{Message}</p>
                   <button
-                    className="mt-6 text-trueAmber-600 focus:outline-none"
+                    className="mt-6 text-trueZinc-600 focus:outline-none"
                     onClick={() => reset()}
                   >
                     Go back
