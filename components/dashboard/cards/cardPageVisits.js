@@ -8,14 +8,14 @@ export default function CardPageVisits() {
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
         <div className="rounded-t mb-0 px-4 py-3 border-0">
           <div className="flex flex-wrap items-center">
-            <div className="relative w-full px-4 max-w-full flex-grow flex-1">
-              <h3 className="font-semibold text-base text-trueZinc-700 dark:text-trueZinc-100">
-                Page visits
+            <div className="relative w-full px-0 max-w-full flex-grow flex-1">
+              <h3 className="uppercase font-semibold text-base text-trueZinc-700">
+                Top Trades
               </h3>
             </div>
             <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
               <button
-                className="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                className="bg-trueAmber-500 text-white active:bg-trueAmber-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
               >
                 See all
@@ -28,94 +28,94 @@ export default function CardPageVisits() {
           <table className="items-center w-full bg-transparent border-collapse">
             <thead>
               <tr>
-                <th className="px-6 bg-blueGray-50 text-trueZinc-700 dark:text-trueZinc-100 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                  Page name
+                <th className="px-6 text-trueZinc-700 align-middle border border-solid border-trueZinc-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                  Symbol
                 </th>
-                <th className="px-6 bg-blueGray-50 text-trueZinc-700 dark:text-trueZinc-100 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                  Visitors
+                <th className="px-6 text-trueZinc-700 align-middle border border-solid border-trueZinc-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                  Trade
                 </th>
-                <th className="px-6 bg-blueGray-50 text-trueZinc-700 dark:text-trueZinc-100 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                  Unique users
+                <th className="px-6 text-trueZinc-700 align-middle border border-solid border-trueZinc-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                  Lot
                 </th>
-                <th className="px-6 bg-blueGray-50 text-trueZinc-700 dark:text-trueZinc-100 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                  Bounce rate
+                <th className="px-6 text-trueZinc-700 align-middle border border-solid border-trueZinc-500 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                  Profit
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  /argon/
+                <th className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                  EURUSD
                 </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  4,569
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  Buy
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  340
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  1.2
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                  46,53%
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  <i className="fas fa-arrow-up text-trueEmerald-500 mr-4"></i>
+                  150.12
                 </td>
               </tr>
               <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  /argon/index.html
+                <th className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                  EURUSD
                 </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  3,985
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  SELL
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  319
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  1.19
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <i className="fas fa-arrow-down text-orange-500 mr-4"></i>
-                  46,53%
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  <i className="fas fa-arrow-up text-trueEmerald-500 mr-4"></i>
+                  139.30
                 </td>
               </tr>
               <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  /argon/charts.html
+                <th className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                  EURUSD
                 </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  3,513
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  Buy
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  294
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  1.21
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <i className="fas fa-arrow-down text-orange-500 mr-4"></i>
-                  36,49%
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  <i className="fas fa-arrow-up text-trueEmerald-500 mr-4"></i>
+                  126.20
                 </td>
               </tr>
               <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  /argon/tables.html
+                <th className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                  EURUSD
                 </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  2,050
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  Buy
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  147
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  1.47
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <i className="fas fa-arrow-up text-emerald-500 mr-4"></i>
-                  50,87%
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  <i className="fas fa-arrow-up text-trueEmerald-500 mr-4"></i>
+                  115.87{" "}
                 </td>
               </tr>
               <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  /argon/profile.html
+                <th className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
+                  EURUSD
                 </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  1,795
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  BUT
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  190
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  1.90
                 </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <i className="fas fa-arrow-down text-red-500 mr-4"></i>
-                  46,53%
+                <td className="text-trueZinc-700 border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  <i className="fas fa-arrow-up text-trueEmerald-500 mr-4"></i>
+                  114.53
                 </td>
               </tr>
             </tbody>

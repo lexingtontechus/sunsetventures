@@ -51,7 +51,7 @@ export default function PopupWidget() {
       <Disclosure>
         {({ open }) => (
           <>
-            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-trueAmber-600 rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-trueAmber-500 focus:bg-trueAmber-600 ease">
+            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-trueZinc-900 rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-trueZinc-500 focus:bg-trueZinc-600 ease">
               <span className="sr-only">Open Contact form Widget</span>
               <Transition
                 show={!open}
@@ -59,7 +59,7 @@ export default function PopupWidget() {
                 enterFrom="opacity-0 -rotate-45 scale-75"
                 leave="transition duration-100 transform ease"
                 leaveTo="opacity-0 -rotate-45"
-                className="absolute w-6 h-6 text-trueZinc-100"
+                className="absolute w-6 h-6 text-trueZinc-50"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +110,7 @@ export default function PopupWidget() {
               leaveTo="opacity-0 translate-y-5"
             >
               <Disclosure.Panel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-trueZinc-300 dark:border-trueZinc-800 bg-trueZinc-100 shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
-                <div className="flex flex-col items-center justify-center h-32 p-5 bg-trueZinc-600">
+                <div className="flex flex-col items-center justify-center h-32 p-5 bg-trueZinc-800">
                   <h3 className="text-lg text-trueZinc-100">
                     How can we help?
                   </h3>
@@ -161,7 +161,7 @@ export default function PopupWidget() {
                           className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-trueZinc-100 border border-trueZinc-300 rounded-md focus:outline-none focus:ring   ${
                             errors.name
                               ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-trueZinc-300 focus:border-trueAmber-600 ring-trueAmber-100"
+                              : "border-trueZinc-300 focus:border-trueZinc-600 ring-trueZinc-100"
                           }`}
                         />
                         {errors.name && (
@@ -192,7 +192,7 @@ export default function PopupWidget() {
                           className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-trueZinc-100 border border-trueZinc-300 rounded-md focus:outline-none focus:ring   ${
                             errors.email
                               ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-trueZinc-300 focus:border-trueAmber-600 ring-trueAmber-100"
+                              : "border-trueZinc-300 focus:border-trueZinc-600 ring-trueZinc-100"
                           }`}
                         />
 
@@ -221,7 +221,7 @@ export default function PopupWidget() {
                           className={`w-full px-3 py-2 placeholder-trueZinc-300 bg-trueZinc-100 border border-trueZinc-300 rounded-md h-28 focus:outline-none focus:ring   ${
                             errors.message
                               ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-trueZinc-300 focus:border-trueAmber-600 ring-trueAmber-100"
+                              : "border-trueZinc-300 focus:border-trueZinc-600 ring-trueZinc-100"
                           }`}
                           required
                         ></textarea>
@@ -234,7 +234,7 @@ export default function PopupWidget() {
                       <div className="mb-3">
                         <button
                           type="submit"
-                          className="w-full px-3 py-4 text-trueZinc-100 bg-trueAmber-700 rounded-md focus:bg-trueAmber-300 focus:outline-none"
+                          className="w-full px-3 py-4 text-trueZinc-100 bg-trueZinc-700 rounded-md focus:bg-trueZinc-300 focus:outline-none"
                         >
                           {isSubmitting ? (
                             <svg
@@ -322,7 +322,7 @@ export default function PopupWidget() {
                       </h3>
                       <p className="text-trueZinc-700 md:px-3">{Message}</p>
                       <button
-                        className="mt-6 text-trueAmber-600 focus:outline-none"
+                        className="mt-6 text-trueZinc-600 focus:outline-none"
                         onClick={() => reset()}
                       >
                         Go back

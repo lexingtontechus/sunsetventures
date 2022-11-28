@@ -20,15 +20,15 @@ const ThemeChanger = () => {
           className="rounded-full outline-none focus:outline-none"
         >
           <span className="sr-only">Light Mode</span>
-          <FontAwesomeIcon icon={faPiggyBank} className="text-trueAmber-300" />
+          <FontAwesomeIcon icon={faPiggyBank} className="text-trueZinc-50" />
         </button>
       ) : (
         <button
           onClick={() => setTheme("dark")}
-          className="fill-truePurple-900 dark:fill-yellow-300 rounded-full outline-none focus:outline-none focus-visible:ring focus-visible:ring-orange-100 focus:ring-opacity-20"
+          className="rounded-full outline-none focus:outline-none focus-visible:ring focus-visible:ring-orange-100 focus:ring-opacity-20"
         >
           <span className="sr-only">Dark Mode</span>
-          <FontAwesomeIcon icon={faPiggyBank} className="text-trueAmber-600" />
+          <FontAwesomeIcon icon={faPiggyBank} className="text-trueZinc-900" />
         </button>
       )}
     </div>

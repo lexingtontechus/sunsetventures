@@ -1,6 +1,5 @@
 import React from "react";
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
-import Image from "next/image";
 
 import SEO from "../components/seo";
 //import Video from "../components/video";
@@ -9,20 +8,21 @@ import SEO from "../components/seo";
 import Loading from "../components/loading";
 import ErrorMessage from "../components/errorMessage";
 
-//import Dashboard from "../layouts/layoutDashboard.js";
+import LayoutDashboard from "../layouts/layoutDashboard";
 //import Navbar from "../components/navbar";
-import Navbar from "../components/dashboard/navbar";
-import Sidebar from "../components/dashboard/sidebar";
-import Footer from "../components/dashboard/footer";
+//import Navbar from "../components/dashboard/navbar";
+//import Sidebar from "../components/dashboard/sidebar";
+//import Footer from "../components/dashboard/footer";
 
 import HeaderStats from "../components/dashboard/headerStats";
 
-//import CardLineChart from "../components/dashboard/cards/cardLineChart.js";
-//import CardBarChart from "../components/dashboard/cards/cardBarChart.js";
-//import CardPageVisits from "../components/dashboard/cards/cardPageVisits.js";
-//import CardSocialTraffic from "../components/dashboard/cards/cardSocialTraffic.js";
+import CardLineChart from "../components/dashboard/cards/cardLineChart.js";
+import CardBarChart from "../components/dashboard/cards/cardBarChart.js";
+import CardPageVisits from "../components/dashboard/cards/cardPageVisits.js";
+import CardSocialTraffic from "../components/dashboard/cards/cardSocialTraffic.js";
 
-function Dashboard() {
+//function Dashboard() {
+export default function Dashboard() {
   const { user, error, isLoading } = useUser();
 
   if (isLoading) return <div>Loading...</div>;
@@ -35,42 +35,43 @@ function Dashboard() {
         <>
           <SEO
             title="Dashboard | Sunset Ventures"
-            description="Profile Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
+            description="Dashboard Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
           />
-          <Sidebar />
-          <div className="relative md:ml-64 h-full mx-auto text-trueZinc-700 dark:text-trueZinc-100">
-            <Navbar />
-            {/* Header */}
-            <HeaderStats />
-            <div className="relative mt-8 px-4 md:px-10 mx-auto w-full -m-24">
-              <div className="flex flex-wrap">
-                <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-                  {/*<CardLineChart />*/}Chart 1
+          <LayoutDashboard>
+            <div className="relative mx-auto text-trueZinc-700 dark:text-trueZinc-100 bg-trueZinc-900">
+              {/* Header */}
+<HeaderStats />
+              <div className="relative mt-8 px-8 mx-auto w-full -m-24">
+                <div className="flex flex-wrap">
+                  <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
+                    <CardLineChart />
+                  </div>
+                  <div className="w-full xl:w-4/12 px-4">
+                    <CardBarChart />
+                  </div>
                 </div>
-                <div className="w-full xl:w-4/12 px-4">
-                  {/*<CardBarChart />*/}Chart 2
+                <div className="flex flex-wrap mt-4">
+                  <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
+                    <CardPageVisits />
+                  </div>
+                  <div className="w-full xl:w-4/12 px-4">
+                    <CardSocialTraffic />
+                  </div>
                 </div>
               </div>
-              <div className="flex flex-wrap mt-4">
-                <div className="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
-                  {/*<CardPageVisits />*/}Chart 3
-                </div>
-                <div className="w-full xl:w-4/12 px-4">
-                  {/*<CardSocialTraffic />*/}Chart 4
-                </div>
-              </div>
-
-              <Footer />
             </div>
-          </div>
+          </LayoutDashboard>
         </>
       )}
     </>
   );
 }
-//Dashboard.layout = Dashboard;
+Dashboard.layout = LayoutDashboard;
+export const getServerSideProps = withPageAuthRequired();
 
-export default withPageAuthRequired(Dashboard, {
+{
+  /*export default withPageAuthRequired(Dashboard, {
   onRedirecting: () => <Loading />,
   onError: (error) => <ErrorMessage>{error.message}</ErrorMessage>,
-});
+});*/
+}

@@ -38,10 +38,17 @@ export default function UserDropDown() {
                   <div>
                     <Menu.Button className="fill-trueZinc-900 dark:fill-trueZinc-100 flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-trueZinc-00 focus:ring-offset-2 focus:ring-offset-trueZinc-800">
                       <span className="sr-only">Open user menu</span>
-                      <FontAwesomeIcon
+                      <Image
+                        className="rounded-full"
+                        src={user.picture}
+                        height={40}
+                        width={40}
+                        alt={user.name}
+                      />
+                      {/* <FontAwesomeIcon
                         icon={faBars}
                         className="text-trueAmber-600 dark:text-trueAmber-300"
-                      />
+                      />*/}
                     </Menu.Button>
                   </div>
                   <Transition
@@ -53,44 +60,54 @@ export default function UserDropDown() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-trueZinc-50 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      {user && (
-                        <Menu.Item>
-                          {({ active }) => (
-                            // eslint-disable-next-line
-                            <Link
-                              href="/dashboard"
-                              className={classNames(
-                                active ? "bg-trueZinc-100" : "",
-                                "block px-4 py-2 text-sm text-trueZinc-700"
-                              )}
-                            >
-                              <div className="flex-wrap text-right">
-                             Dashboard
-                              </div>
-                            </Link>
-                          )}
-                        </Menu.Item>
-                      )}
-                        {user && (
-                        <Menu.Item>
-                          {({ active }) => (
-                            // eslint-disable-next-line
-                            <Link
-                              href="/profile"
-                              className={classNames(
-                                active ? "bg-trueZinc-100" : "",
-                                "block px-4 py-2 text-sm text-trueZinc-700"
-                              )}
-                            >
-                              <div className="flex-wrap text-right">
-                                Profile
-                              </div>
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        
-                      )}
+                    <Menu.Items className="absolute right-0 z-10 mt-2 min-w-min origin-top-right rounded-md bg-trueZinc-50 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
+                          // eslint-disable-next-line
+                          <Link
+                            href="/dashboard"
+                            className={classNames(
+                              active ? "bg-trueZinc-100" : "",
+                              "block px-4 py-2 text-sm text-trueZinc-700"
+                            )}
+                          >
+                            <div className="flex-wrap text-right">
+                              Dashboard
+                            </div>
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          // eslint-disable-next-line
+                          <Link
+                            href="/portfolio"
+                            className={classNames(
+                              active ? "bg-trueZinc-100" : "",
+                              "block px-4 py-2 text-sm text-trueZinc-700"
+                            )}
+                          >
+                            <div className="flex-wrap text-right">
+                              Portfolio
+                            </div>
+                          </Link>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          // eslint-disable-next-line
+                          <Link
+                            href="/profile"
+                            className={classNames(
+                              active ? "bg-trueZinc-100" : "",
+                              "block px-4 py-2 text-sm text-trueZinc-700"
+                            )}
+                          >
+                            <div className="flex-wrap text-right">Profile</div>
+                          </Link>
+                        )}
+                      </Menu.Item>
+
                       <Menu.Item>
                         {({ active }) => (
                           <Link
@@ -111,7 +128,7 @@ export default function UserDropDown() {
             </div>
           </div>
 
-          <Disclosure.Panel className="sm:hidden">
+          <Disclosure.Panel className="">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {collapsedItems.map((item) => (
                 <Disclosure.Button
@@ -120,8 +137,8 @@ export default function UserDropDown() {
                   href={item.href}
                   className={classNames(
                     item.current
-                      ? "bg-truePurple-600 text-trueZinc-700 dark:text-trueZinc-100 dark:bg-trueSky-600"
-                      : "text-trueZinc-700 hover:bg-truePurple-500 dark:text-trueZinc-100 dark:hover:bg-truePurple-500",
+                      ? "bg-trueBlue-600 text-trueZinc-700 dark:text-trueZinc-100 dark:bg-trueBlue-600"
+                      : "text-trueZinc-700 hover:bg-trueBlue-500 dark:text-trueZinc-100 dark:hover:bg-trueBlue-500",
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}
                   aria-current={item.current ? "page" : undefined}
