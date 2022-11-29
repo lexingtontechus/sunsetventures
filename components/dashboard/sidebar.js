@@ -34,7 +34,7 @@ export default function Sidebar() {
           >
             <FontAwesomeIcon
               icon={faBars}
-              className="text-trueAmber-600 dark:text-trueAmber-300"
+              className="text-trueZinc-600 dark:text-trueZinc-300"
             />
           </button>
           {/* Brand */}
@@ -71,7 +71,7 @@ export default function Sidebar() {
                   >
                     <FontAwesomeIcon
                       icon={faTimes}
-                      className="text-trueAmber-600 dark:text-trueAmber-300"
+                      className="text-trueZinc-600 dark:text-trueZinc-300"
                     />
                   </button>
                 </div>
