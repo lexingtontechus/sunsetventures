@@ -54,7 +54,7 @@ class MyDocument extends Document {
             href="https://storageapi.fleek.co/9ec37732-832c-4af1-a4fa-cc87c28c6dae-bucket/assets/img/logo-sunset.svg"
           />
         </Head>
-        <body className="lightmode dark:darkmode">
+        <body className="lightmode dark:darkmode" class="dark">
           <Main />
           <NextScript />
         </body>
