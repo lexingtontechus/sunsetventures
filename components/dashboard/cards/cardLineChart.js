@@ -70,7 +70,7 @@ export default function CardLineChart() {
         </div>
         <div className="p-4 flex-auto">
           {/* Chart */}
-          <div className="relative h-350-px">
+          <div className="relative max-h-[350px]">
             <Line id="Line Chart" data={data} width={350} height={350} />
           </div>
         </div>

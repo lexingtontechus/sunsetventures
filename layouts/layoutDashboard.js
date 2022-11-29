@@ -13,9 +13,8 @@ export default function Admin({ children }) {
       <div className="relative h-full w-full mx-auto px-8">
         <Navbar />
         {/* Header */}
-        <div className="relative mb-8">
-        
-          <div className="mx-auto w-full -m-24">{children}</div>
+        <div className="relative mb-4">
+          <div className="mx-auto w-full">{children}</div>
         </div>
         <Footer />
       </div>
