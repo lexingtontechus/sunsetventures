@@ -7,10 +7,11 @@ import SmartFX from "../components/smartfx";
 import { smartfxOne, smartfxTwo } from "../components/smartfxdata";
 
 import Cta from "../components/cta";
-import Faq from "../components/faq";
-import PopupWidget from "../components/popupWidget";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+//import Faq from "../components/faq";
+//import PopupWidget from "../components/popupWidget";
+//import Navbar from "../components/navbar";
+//import Footer from "../components/footer";
+import Layout from "../layouts/layout.js";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
         title="Home | Sunset Ventures"
         description="Home Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
       />
-      <Navbar />
+      {/*<Navbar />*/}
+      <Layout>
       <Hero />
       <SectionTitle pretitle="Our Story" title="Sunset Ventures">
         Our primary goal is to establish a wealth strategy for our clients
@@ -31,9 +33,10 @@ export default function Home() {
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
         How can an organization partner with Sunset Ventures?
       </SectionTitle>
-      <Faq />
+      </Layout>
+      {/*<Faq />
       <Footer />
-      <PopupWidget />
+      <PopupWidget />*/}
     </>
   );
 }
