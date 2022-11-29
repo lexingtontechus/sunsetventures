@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    // Required:
-    appDir: true,
-  },
   reactStrictMode: true,
   images: {
     //domains: ["storageapi.fleek.co", "savivets.wpengine.com"],
@@ -18,15 +14,18 @@ const nextConfig = {
         hostname: "**.lh3.googleusercontent.com/**",
         pathname: "/**",
       },
-      
+
       {
         protocol: "https",
         hostname: "**.gravatar.com/**",
         pathname: "/**",
       },
-      
     ],
-    domains: ["storageapi.fleek.co", "lh3.googleusercontent.com","gravatar.com"],
+    domains: [
+      "storageapi.fleek.co",
+      "lh3.googleusercontent.com",
+      "gravatar.com",
+    ],
   },
 };
 
