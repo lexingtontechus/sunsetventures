@@ -24,14 +24,14 @@ export default function Home() {
       <Layout>
       <Hero />
       <SectionTitle pretitle="Our Story" title="Sunset Ventures">
-        Our primary goal is to establish a wealth strategy for our clients
-        through the use of Artificial Intelligence-driven quantitative trading.
+        &quot;Our primary goal is to establish a wealth strategy for our clients
+        through the use of Artificial Intelligence-driven quantitative trading.&quot;
       </SectionTitle>
       <SmartFX data={smartfxOne} />
       <SmartFX imgPos="right" data={smartfxTwo} />
       <Cta />
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        How can an organization partner with Sunset Ventures?
+        Interested in knowing more about Sunset Ventures?
       </SectionTitle>
       </Layout>
       {/*<Faq />

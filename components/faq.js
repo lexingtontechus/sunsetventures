@@ -37,7 +37,12 @@ const faqdata = [
   {
     question: "What products & services does Sunset Ventures offer?",
     answer:
-      "We have several retail products and commercially licensed trading strategies & algorithms to grow your own trading portfolio. We build custom algorithms and AI/ML engines per your specifications. ",
+      "We have several retail products and commercially licensed trading strategies & algorithms to grow your own trading portfolio. We build custom algorithms and AI/ML engines per your specifications.",
+  },
+   {
+    question: "What commercial services does Sunset Ventures offer?",
+    answer:
+      "We offer a white label service for our prioprietary or custom developed products.",
   },
   {
     question: "Is Sunset Ventures hiring?",
