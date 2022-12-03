@@ -1,5 +1,9 @@
 import { Fragment } from "react";
-import { useUser } from "@auth0/nextjs-auth0";
+//import { useUser } from "@auth0/nextjs-auth0";
+
+import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
+import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useEffect, useState } from "react";
 
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
@@ -27,7 +31,20 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const { user, isLoading } = useUser();
+  //const { user, isLoading } = useUser();
+  const supabaseClient = useSupabaseClient()
+  const user = useUser()
+  const [data, setData] = useState()
+
+  useEffect(() => {
+    async function loadData() {
+      const { data } = await supabaseClient.from('test').select('*')
+      setData(data)
+    }
+    // Only run query once user is logged in.
+    if (user) loadData()
+  }, [user])
+
   return (
     <Disclosure as="nav">
       {({ open }) => (

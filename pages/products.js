@@ -22,12 +22,12 @@ export default function Products() {
   return (
     <>
       <SEO
-        title="Products | del SOL"
-        description="Portfolio del SOL. Early-stage VC in biotech, cleantech, foodtech & mobility."
+        title="Products | Sunset Ventures"
+        description="Products Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
       />
       <div className="main">
         <Navbar />
-        <SectionTitle pretitle="Products" title="del SOL Mission Statement">
+        <SectionTitle pretitle="Products" title="Product Configuration">
           &quot;Our mission is to support Southern Californian start-ups and
           communities to create sustainable, renewable & secure platforms.&quot;
         </SectionTitle>

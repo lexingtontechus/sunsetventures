@@ -1,11 +1,31 @@
-import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs'
-
+import React from "react";
+import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import Image from "next/image";
+
 import SEO from "../components/seo";
+//import Video from "../components/video";
+//import Testimonials from "../components/testimonials";
+
+import Loading from "../components/loading";
+import ErrorMessage from "../components/errorMessage";
+
 import LayoutDashboard from "../layouts/layoutDashboard";
 
-export default function Profile({ user }) {
+//import CardLineChart from "../components/dashboard/cards/cardLineChart.js";
+//import CardBarChart from "../components/dashboard/cards/cardBarChart.js";
+//import CardPageVisits from "../components/dashboard/cards/cardPageVisits.js";
+//import CardSocialTraffic from "../components/dashboard/cards/cardSocialTraffic.js";
+
+function Profile() {
+  const { user, error, isLoading } = useUser();
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
+
   return (
+    <>
+      {isLoading && <Loading />}
+      {user && (
         <>
           <SEO
             title="Profile | Sunset Ventures"
@@ -44,29 +64,12 @@ export default function Profile({ user }) {
           </div>
         </LayoutDashboard>
         </>
-  )
-}
+      )}
+    </>
+  );
+} 
 
-export const getServerSideProps = async (ctx) => {
-  // Create authenticated Supabase Client
-  const supabase = createServerSupabaseClient(ctx)
-  // Check if we have a session
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
-
-  if (!session)
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-    }
-
-  return {
-    props: {
-      initialSession: session,
-      user: session.user,
-    },
-  }
-}
+export default withPageAuthRequired(Profile, {
+  onRedirecting: () => <Loading />,
+  onError: (error) => <ErrorMessage>{error.message}</ErrorMessage>,
+});
