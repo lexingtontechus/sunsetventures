@@ -1,13 +1,9 @@
 import React from "react";
-import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import Image from "next/image";
 
 import SEO from "../components/seo";
 //import Video from "../components/video";
 //import Testimonials from "../components/testimonials";
-
-import Loading from "../components/loading";
-import ErrorMessage from "../components/errorMessage";
 
 import LayoutDashboard from "../layouts/layoutDashboard";
 
@@ -16,18 +12,10 @@ import LayoutDashboard from "../layouts/layoutDashboard";
 //import CardPageVisits from "../components/dashboard/cards/cardPageVisits.js";
 //import CardSocialTraffic from "../components/dashboard/cards/cardSocialTraffic.js";
 
-function Profile() {
-  const { user, error, isLoading } = useUser();
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
-
+export default function Portfolio() {
   return (
     <>
-      {isLoading && <Loading />}
-      {user && (
-        <>
-          <SEO
+            <SEO
             title="Portfolio | Sunset Ventures"
             description="Portfolio Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
           />
@@ -56,12 +44,5 @@ function Profile() {
           </div>
         </LayoutDashboard>
         </>
-      )}
-    </>
   );
 } 
-
-export default withPageAuthRequired(Profile, {
-  onRedirecting: () => <Loading />,
-  onError: (error) => <ErrorMessage>{error.message}</ErrorMessage>,
-});
