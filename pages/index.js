@@ -7,7 +7,7 @@ import SmartFX from "../components/smartfx";
 import { smartfxOne, smartfxTwo } from "../components/smartfxdata";
 
 import Cta from "../components/cta";
-//import Faq from "../components/faq";
+import Faq from "../components/faq";
 //import PopupWidget from "../components/popupWidget";
 //import Navbar from "../components/navbar";
 //import Footer from "../components/footer";
@@ -22,17 +22,19 @@ export default function Home() {
       />
       {/*<Navbar />*/}
       <Layout>
-      <Hero />
-      <SectionTitle pretitle="Our Story" title="Sunset Ventures">
-        &quot;Our primary goal is to establish a wealth strategy for our clients
-        through the use of Artificial Intelligence-driven quantitative trading.&quot;
-      </SectionTitle>
-      <SmartFX data={smartfxOne} />
-      <SmartFX imgPos="right" data={smartfxTwo} />
-      <Cta />
-      <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        Interested in knowing more about Sunset Ventures?
-      </SectionTitle>
+        <Hero />
+        <SectionTitle pretitle="Our Story" title="Sunset Ventures">
+          &quot;Our primary goal is to establish a wealth strategy for our
+          clients through the use of Artificial Intelligence-driven quantitative
+          trading.&quot;
+        </SectionTitle>
+        <SmartFX data={smartfxOne} />
+        <SmartFX imgPos="right" data={smartfxTwo} />
+        <Faq />
+        <Cta />
+        <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
+          Interested in knowing more about Sunset Ventures?
+        </SectionTitle>
       </Layout>
       {/*<Faq />
       <Footer />

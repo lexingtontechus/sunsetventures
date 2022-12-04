@@ -20,11 +20,17 @@ const nextConfig = {
         hostname: "**.gravatar.com/**",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "media-exp1.licdn.com",
+        pathname: "/**",
+      },
     ],
     domains: [
       "storageapi.fleek.co",
       "lh3.googleusercontent.com",
       "gravatar.com",
+      "media-exp1.licdn.com",
     ],
   },
 };

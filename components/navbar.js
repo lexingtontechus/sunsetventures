@@ -84,7 +84,7 @@ const Navbar = () => {
                               </Link>
                             </Menu.Item>
                             <Menu.Item>
-                              <span
+                              <button
                                 className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                                 onClick={async () => {
                                   await supabaseClient.auth.signOut();
@@ -92,17 +92,17 @@ const Navbar = () => {
                                 }}
                               >
                                 Logout
-                              </span>
+                              </button>
                             </Menu.Item>
                           </>
                         ) : (
                           <>
                             <Menu.Item>
                               <Link
-                                href="/login"
+                                href="/signin"
                                 className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                               >
-                                Login
+                                Sign In
                               </Link>
                             </Menu.Item>
                           </>
