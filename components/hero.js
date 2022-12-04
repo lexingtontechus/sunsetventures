@@ -23,9 +23,10 @@ export default function Hero() {
           <div className="visible lg:block">
             <Image
               src="/img/hero.jpg"
-              width="400"
-              height="400"
+              width={400}
+              height={400}
               alt="Sunset Hero"
+              priority="true"
             />
           </div>
         </div>

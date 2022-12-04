@@ -1,118 +1,72 @@
-import Link from "next/link";
-
+import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
+import Login from "../components/login";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useUser } from "../utils/useUser";
 
-import { Fragment } from "react";
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import ThemeChanger from "../../components/darkSwitch";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import SEO from "../components/seo";
+import Layout from "../layouts/layout";
+import { Transition } from "@headlessui/react";
 
-const Navbar = () => {
+const LoginPage = () => {
+  const router = useRouter();
+  const supabaseClient = useSupabaseClient();
+  const { user } = useUser();
+useEffect(() => {
+    if (user) {
+      router.replace('/dashboard');
+    }
+  }, [user]);
   return (
     <>
-      <Disclosure as="nav">
-        {({ open }) => (
-          <>
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 py-4">
-              <div className="relative flex h-16 items-center justify-between">
-                <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                  {/* Mobile menu button*/}
-                </div>
-                <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                  <div className="flex flex-shrink-0 items-center">
-                    <Link
-                      href="/"
-                      className="inline-flex h-content w-auto fill-trueZinc-900 dark:fill-trueZinc-100 stroke-2"
-                    >
-                      <Logo />
-                    </Link>
-                  </div>
-                </div>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  {/* Profile dropdown */}
-                  <Menu as="div" className="relative mx-3">
-                    <div>
-                      <Menu.Button className="flex rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-trueZinc-00 focus:ring-offset-2 focus:ring-offset-trueZinc-800">
-                        <span className="sr-only">Open user menu</span>
-                        <FontAwesomeIcon
-                          icon={faBars}
-                          className="text-trueZinc-900 dark:text-trueZinc-50"
-                        />
-                      </Menu.Button>
-                    </div>
-                    <Transition
-                      as={Fragment}
-                      enter="transition ease-out duration-100"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
-                    >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-trueZinc-50 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <Menu.Item>
-                          <Link
-                            href="/dashboard"
-                            className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
-                          >
-                            Dashboard
-                          </Link>
-                        </Menu.Item>
-                        <Menu.Item>
-                          <Link
-                            href="/portfolio"
-                            className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
-                          >
-                            Portfolio
-                          </Link>
-                        </Menu.Item>
-                        <Menu.Item>
-                          <Link
-                            href="/profile"
-                            className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
-                          >
-                            Profile
-                          </Link>
-                        </Menu.Item>
-                        <Menu.Item>
-                          <button
-                            className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
-                            onClick={async () => {
-                              await supabaseClient.auth.signOut();
-                              router.push("/logout");
-                            }}
-                          >
-                            Logout
-                          </button>
-                        </Menu.Item>
-                      </Menu.Items>
-                    </Transition>
-                  </Menu>
-
-                  <ThemeChanger />
-                </div>
+  <SEO
+          title="Login | Sunset Ventures"
+          description="Login Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
+        />
+        <Layout>
+          <div className="flex justify-center height-screen-helper h-max">
+            <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
+              <div className="flex justify-center pb-12 uppercase font-bold text-lg">
+               <Logo />
+               </div>
+               <div className="flex justify-center pb-12 uppercase font-bold text-xl text-trueZinc-700 dark:text-trueZinc-100 text-center">
+               Sunset Ventures <br />Client Portal
+              </div>
+              <div className="flex flex-col space-y-4">
+                <Auth
+                  redirectTo="/dashboard"
+                  theme="dark"
+                  appearance={{ theme: ThemeSupa, 
+                  className: { label: "text-sm text-trueZinc-700 dark:text-trueZinc-100"},
+                  
+                  variables: {
+        default: {
+          colors: {
+            brand: '#18181b',
+            brandAccent: '#71717a',
+            brandButtonBackground: '#18181b',
+            brandButtonText: '#f4f4f5',
+      defaultButtonBackground: '#18181b',
+      defaultButtonBackgroundHover: '#71717a',
+          },
+        },
+      },
+    }}
+                  supabaseClient={supabaseClient}
+                  providers={["google", "linkedin"]}
+                  socialLayout="horizontal"
+                  magicLink={true}
+                  
+                />
               </div>
             </div>
-
-            <Disclosure.Panel className="sm:hidden">
-              <div className="space-y-1 px-2 pt-2 pb-3">
-                <Disclosure.Button
-                  href="/"
-                  className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
-                >
-                  Home
-                </Disclosure.Button>
-              </div>
-            </Disclosure.Panel>
-          </>
-        )}
-      </Disclosure>
-    </>
-  );
+          </div>
+        </Layout>  
+        </>);
 };
 
-export default Navbar;
+export default LoginPage;
 
 function Logo() {
   return (
@@ -120,8 +74,8 @@ function Logo() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 300 300"
       preserveAspectRatio="xMidYMid meet"
-      width="50"
-      height="50"
+      width="150"
+      height="150"
     >
       <defs>
         <linearGradient>

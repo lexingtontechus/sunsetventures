@@ -16,7 +16,6 @@ export default function Layout({ children }) {
         <div className="relative mb-4">
           <div className="mx-auto w-full">{children}</div>
         </div>
-        <Faq />
         <Footer />
         <PopupWidget />
         <Cal />
