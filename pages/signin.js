@@ -13,57 +13,60 @@ const LoginPage = () => {
   const router = useRouter();
   const supabaseClient = useSupabaseClient();
   const { user } = useUser();
-useEffect(() => {
+  useEffect(() => {
     if (user) {
-      router.replace('/dashboard');
+      router.replace("/dashboard");
     }
   }, [user]);
   return (
     <>
-  <SEO
-          title="Login | Sunset Ventures"
-          description="Login Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
-        />
-        <Layout>
-          <div className="flex justify-center height-screen-helper h-max">
-            <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
-              <div className="flex justify-center pb-12 uppercase font-bold text-lg">
-               <Logo />
-               </div>
-               <div className="flex justify-center pb-12 uppercase font-bold text-xl text-trueZinc-700 dark:text-trueZinc-100 text-center">
-               Sunset Ventures <br />Client Portal
-              </div>
-              <div className="flex flex-col space-y-4">
-                <Auth
-                  redirectTo="/dashboard"
-                  theme="dark"
-                  appearance={{ theme: ThemeSupa, 
-                  className: { label: "text-sm text-trueZinc-700 dark:text-trueZinc-100"},
-                  
+      <SEO
+        title="Sign In | Sunset Ventures"
+        description="Login Sunset Ventures. Quantitative Trading. SEC Approved. Cryptocurrency Trading. Smart Algorithms. Smart FX."
+      />
+      <Layout>
+        <div className="flex justify-center height-screen-helper h-max">
+          <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
+            <div className="flex justify-center pb-12 uppercase font-bold text-lg">
+              <Logo />
+            </div>
+            <div className="flex justify-center pb-12 uppercase font-bold text-xl text-trueZinc-700 dark:text-trueZinc-100 text-center">
+              Sunset Ventures <br /> Portal
+            </div>
+            <div className="flex flex-col space-y-4">
+              <Auth
+                redirectTo="/dashboard"
+                theme="dark"
+                appearance={{
+                  theme: ThemeSupa,
+                  className: {
+                    label: "text-sm text-trueZinc-700 dark:text-trueZinc-100",
+                  },
+
                   variables: {
-        default: {
-          colors: {
-            brand: '#18181b',
-            brandAccent: '#71717a',
-            brandButtonBackground: '#18181b',
-            brandButtonText: '#f4f4f5',
-      defaultButtonBackground: '#18181b',
-      defaultButtonBackgroundHover: '#71717a',
-          },
-        },
-      },
-    }}
-                  supabaseClient={supabaseClient}
-                  providers={["google", "linkedin"]}
-                  socialLayout="horizontal"
-                  magicLink={true}
-                  
-                />
-              </div>
+                    default: {
+                      colors: {
+                        brand: "#18181b",
+                        brandAccent: "#71717a",
+                        brandButtonBackground: "#18181b",
+                        brandButtonText: "#f4f4f5",
+                        defaultButtonBackground: "#18181b",
+                        defaultButtonBackgroundHover: "#71717a",
+                      },
+                    },
+                  },
+                }}
+                supabaseClient={supabaseClient}
+                providers={["google", "linkedin"]}
+                socialLayout="horizontal"
+                magicLink={true}
+              />
             </div>
           </div>
-        </Layout>  
-        </>);
+        </div>
+      </Layout>
+    </>
+  );
 };
 
 export default LoginPage;

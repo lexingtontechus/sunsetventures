@@ -26,7 +26,7 @@ export default function Hero() {
               width={400}
               height={400}
               alt="Sunset Hero"
-              priority="true"
+              priority="false"
             />
           </div>
         </div>
@@ -42,4 +42,3 @@ export default function Hero() {
     </>
   );
 }
-

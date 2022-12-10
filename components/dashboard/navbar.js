@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
+
 import Link from "next/link";
 
 import { useRouter } from "next/router";
@@ -9,6 +12,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
+  const supabase = useSupabaseClient();
+  const router = useRouter();
   return (
     <>
       <Disclosure as="nav">
@@ -61,15 +66,23 @@ const Navbar = () => {
                         </Menu.Item>
                         <Menu.Item>
                           <Link
-                            href="/portfolio"
+                            href="/dashboardportfolio"
                             className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                           >
                             Portfolio
                           </Link>
                         </Menu.Item>
+                         <Menu.Item>
+                          <Link
+                            href="/dashboardproducts"
+                            className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
+                          >
+                            Products
+                          </Link>
+                        </Menu.Item>
                         <Menu.Item>
                           <Link
-                            href="/profile"
+                            href="/dashboardprofile"
                             className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                           >
                             Profile
@@ -79,8 +92,8 @@ const Navbar = () => {
                           <button
                             className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                             onClick={async () => {
-                              await supabaseClient.auth.signOut();
-                              router.push("/logout");
+                              await supabase.auth.signOut();
+                              router.push("/");
                             }}
                           >
                             Logout

@@ -12,10 +12,6 @@ import SEO from "../components/seo";
 //import Testimonials from "../components/testimonials";
 
 import LayoutDashboard from "../layouts/layoutDashboard";
-//import Navbar from "../components/navbar";
-//import Navbar from "../components/dashboard/navbar";
-//import Sidebar from "../components/dashboard/sidebar";
-//import Footer from "../components/dashboard/footer";
 
 import HeaderStats from "../components/dashboard/headerStats";
 
