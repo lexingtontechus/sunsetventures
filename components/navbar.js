@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { useRouter } from "next/router";
 import { useUser } from "../utils/useUser";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
@@ -14,6 +14,7 @@ const Navbar = () => {
   const router = useRouter();
   const supabaseClient = useSupabaseClient();
   const { user } = useUser();
+  const session = useSession();
 
   return (
     <>
@@ -69,10 +70,18 @@ const Navbar = () => {
                             </Menu.Item>
                             <Menu.Item>
                               <Link
-                                href="/portfolio"
+                                href="/dashboardportfolio"
                                 className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                               >
                                 Portfolio
+                              </Link>
+                            </Menu.Item>
+                             <Menu.Item>
+                              <Link
+                                href="/dashboardproducts"
+                                className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
+                              >
+                                Products
                               </Link>
                             </Menu.Item>
                             <Menu.Item>
@@ -105,6 +114,22 @@ const Navbar = () => {
                                 Sign In
                               </Link>
                             </Menu.Item>
+                            <Menu.Item>
+                              <Link
+                                href="/about"
+                                className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
+                              >
+                                About
+                              </Link>
+                            </Menu.Item>
+                            <Menu.Item>
+                              <Link
+                                href="/contact"
+                                className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
+                              >
+                                Contact
+                              </Link>
+                            </Menu.Item>
                           </>
                         )}
                       </Menu.Items>
@@ -116,13 +141,13 @@ const Navbar = () => {
               </div>
             </div>
 
-            <Disclosure.Panel className="sm:hidden">
+            <Disclosure.Panel className="">
               <div className="space-y-1 px-2 pt-2 pb-3">
                 <Disclosure.Button
-                  href="/"
+                  href="/signin"
                   className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                 >
-                  Home
+                  Sign In
                 </Disclosure.Button>
               </div>
             </Disclosure.Panel>

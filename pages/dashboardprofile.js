@@ -7,7 +7,7 @@ import Image from "next/image";
 import SEO from "../components/seo";
 import LayoutDashboard from "../layouts/layoutDashboard";
 
-import Profile from "../components/profile";
+import Profile from "../components/dashboard/profile";
 
 const ProfilePage = () => {
   const session = useSession();
@@ -21,7 +21,7 @@ const ProfilePage = () => {
       <LayoutDashboard>
         <div className="relative h-full mx-auto text-trueZinc-700 dark:text-trueZinc-100">
           <div className="relative mt-8 px-4 md:px-10 mx-auto w-full mb-24">
-            <div className="text-xl font-bold uppercase text-center">
+            <div className="text-xl font-bold uppercase text-center mb-8">
               Update Your Profile
             </div>
             <div className="flex flex-wrap content-center items-center justify-center min-h-[250px] sm:h-[600px]">

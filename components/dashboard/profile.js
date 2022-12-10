@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useUser, useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Avatar from "./avatar";
 
 export default function Profile({ session }) {
   const router = useRouter();
@@ -45,12 +46,13 @@ export default function Profile({ session }) {
     }
   }
 
-  async function updateProfile({ username, website, avatar_url }) {
+  async function updateProfile({ full_name, username, website, avatar_url }) {
     try {
       setLoading(true);
 
       const updates = {
         id: user.id,
+        full_name,
         username,
         website,
         avatar_url,
@@ -70,26 +72,46 @@ export default function Profile({ session }) {
   return (
     <>
       <div className="form-widget align-center flex-grow h-full p-6 overflow-auto">
-        <div className="p-8">
+        {/* <div className="p-8">
           {avatar_url ? (
             <Image
               src={avatar_url}
               alt="Avatar"
               className="rounded-full mx-auto"
-              height={100}
-              width={100}
+              width={150}
+              height={150}
             />
           ) : (
-            <div className="avatar no-image" />
+            <div className="avatar no-image" width={150} height={150}>
+              <Image
+                src="https://storageapi.fleek.co/9ec37732-832c-4af1-a4fa-cc87c28c6dae-bucket/assets/img/memberprofile.png"
+                alt="Avatar"
+                className="rounded-half mx-auto"
+                width={150}
+                height={150}
+              />
+            </div>
           )}
+        </div>*/}
+
+        <div className="py-4 align-center mb-4 bg-trueZinc-900">
+          <Avatar
+            uid={user.id}
+            url={avatar_url}
+            size={150}
+            onUpload={(url) => {
+              setAvatarUrl(url);
+              updateProfile({ username, website, avatar_url: url });
+            }}
+          />
         </div>
         <div className="mb-4">
           <label htmlFor="fullname">Full Name</label>
           <input
             id="fullname"
             type="text"
-            value={full_name}
-            disabled
+            value={full_name || ""}
+            onChange={(e) => setFullname(e.target.value)}
             className="w-full"
           />
         </div>
@@ -127,7 +149,9 @@ export default function Profile({ session }) {
         <div className="align-center mb-4">
           <button
             className="button primary block bg-trueZinc-900 rounded-md p-2 w-full text-trueZinc-100"
-            onClick={() => updateProfile({ username, website, avatar_url })}
+            onClick={() =>
+              updateProfile({ full_name, username, website, avatar_url })
+            }
             disabled={loading}
           >
             {loading ? "Loading ..." : "Update"}
@@ -136,7 +160,7 @@ export default function Profile({ session }) {
 
         <div className="mb-4">
           <button
-            className="button block bg-trueZinc-900 rounded-md p-2 text-trueZinc-100"
+            className="w-full button block bg-trueZinc-900 rounded-md p-2 text-trueZinc-100"
             //onClick={() => supabase.auth.signOut()}
             onClick={async () => {
               await supabase.auth.signOut();

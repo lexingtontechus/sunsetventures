@@ -66,15 +66,23 @@ const Navbar = () => {
                         </Menu.Item>
                         <Menu.Item>
                           <Link
-                            href="/portfolio"
+                            href="/dashboardportfolio"
                             className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                           >
                             Portfolio
                           </Link>
                         </Menu.Item>
+                         <Menu.Item>
+                          <Link
+                            href="/dashboardproducts"
+                            className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
+                          >
+                            Products
+                          </Link>
+                        </Menu.Item>
                         <Menu.Item>
                           <Link
-                            href="/profile"
+                            href="/dashboardprofile"
                             className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                           >
                             Profile
