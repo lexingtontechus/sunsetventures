@@ -66,7 +66,7 @@ const Navbar = () => {
                         </Menu.Item>
                         <Menu.Item>
                           <Link
-                            href="/dashboardportfolio"
+                            href="/portfolio"
                             className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                           >
                             Portfolio
@@ -74,7 +74,7 @@ const Navbar = () => {
                         </Menu.Item>
                          <Menu.Item>
                           <Link
-                            href="/dashboardproducts"
+                            href="/products"
                             className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                           >
                             Products
@@ -82,7 +82,7 @@ const Navbar = () => {
                         </Menu.Item>
                         <Menu.Item>
                           <Link
-                            href="/dashboardprofile"
+                            href="/profile"
                             className="bg-trueZinc-100 block px-4 py-2 text-sm text-trueZinc-700"
                           >
                             Profile
