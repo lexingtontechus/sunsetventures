@@ -4,12 +4,12 @@ import { createServerSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import SEO from "../components/seo";
 
 import LayoutDashboard from "../layouts/layoutDashboard";
-import DashboardProducts from "../components/dashboard/products";
-
+import Pricing from "../components/dashboard/pricing";
+import { getActiveProductsWithPrices } from "../utils/supabase-client";
 
 //function Dashboard() {
 
-export default function Products() {
+export default function Products({ products }) {
   return (
     <>
       <SEO
@@ -19,39 +19,21 @@ export default function Products() {
       <LayoutDashboard>
         <div className="relative mx-auto text-trueZinc-700 dark:text-trueZinc-100">
           {/* Header */}
-          <DashboardProducts />
+          <Pricing products={products} />
         </div>
       </LayoutDashboard>
     </>
   );
 }
-export const getServerSideProps = async (ctx) => {
-  // Create authenticated Supabase Client
-  const supabase = createServerSupabaseClient(ctx);
-  // Check if we have a session
-  const {
-    data: { session },
-  } = await supabase.auth.getSession();
 
-  if (!session)
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
+export async function getStaticProps() {
+  const products = await getActiveProductsWithPrices();
 
   return {
     props: {
-      initialSession: session,
-      user: session.user,
+      products,
     },
+    revalidate: 60,
   };
-};
-
-{
-  /*export default withPageAuthRequired(Dashboard, {
-  onRedirecting: () => <Loading />,
-  onError: (error) => <ErrorMessage>{error.message}</ErrorMessage>,
-});*/
 }
+  
