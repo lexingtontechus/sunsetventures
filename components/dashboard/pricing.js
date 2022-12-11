@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Image from "next/image";
 
 import { postData } from "../../utils/helpers";
 import { getStripe } from "../../utils/stripe-client";
@@ -21,7 +22,7 @@ export default function Pricing({ products }) {
       return router.push("/signin");
     }
     if (subscription) {
-      return router.push("/dashboardproducts");
+      return router.push("/profile");
     }
 
     try {
@@ -39,15 +40,15 @@ export default function Pricing({ products }) {
     }
   };
 
-  if (!products)
+  if (!products.length)
     return (
       <section className="bg-black">
         <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
           <div className="sm:flex sm:flex-col sm:align-center"></div>
-          <p className="text-6xl font-extrabold text-trueZinc-100 sm:text-center sm:text-6xl">
+          <p className="text-6xl font-extrabold text-trueZinc-700 dark:text-trueZinc-100 sm:text-center sm:text-6xl">
             No subscription pricing plans found. Create them in your{" "}
             <a
-              className="text-truePink-500 underline"
+              className="text-pink-500 underline"
               href="https://dashboard.stripe.com/products"
               rel="noopener noreferrer"
               target="_blank"
@@ -61,25 +62,29 @@ export default function Pricing({ products }) {
     );
 
   return (
-    <section className="bg-black">
+    <section className="bg-trueBlue-400 dark:bg-trueBlue-900">
       <div className="max-w-6xl mx-auto py-8 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:flex-col sm:align-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
-            Pricing Plans
+          <h1 className="text-4xl font-extrabold text-trueZinc-700 dark:text-trueZinc-100 sm:text-center sm:text-6xl">
+            Sunset Ventures
           </h1>
-          <p className="mt-5 text-xl text-trueZinc-200 sm:text-center sm:text-2xl max-w-2xl m-auto">
-            Start building for free, then add a site plan to go live. Account
-            plans unlock additional features.
+          <h2 className="text-2xl font-bold text-trueZinc-700 dark:text-trueZinc-100 sm:text-center sm:text-6xl">
+            Pricing Plans
+          </h2>
+          <p className="mt-5 text-xl text-trueZinc-700 dark:text-zinc-100 sm:text-center sm:text-2xl max-w-2xl m-auto">
+            Start with our recommended Freelancer plan, 3 configurable
+            parameters. Our high powered plans unlock additional features &
+            configurable parameters.
           </p>
-          <div className="relative self-center mt-6 bg-trueZinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-trueZinc-800">
+          <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
             <button
               onClick={() => setBillingInterval("month")}
               type="button"
               className={`${
                 billingInterval === "month"
-                  ? "relative w-1/2 bg-trueZinc-700 border-trueZinc-800 shadow-sm text-white"
-                  : "ml-0.5 relative w-1/2 border border-transparent text-trueZinc-400"
-              } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
+                  ? "relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-trueZinc-100"
+                  : "ml-0.5 relative w-1/2 border border-transparent text-zinc-400"
+              } rounded-md m-1 py-2 text-sm font-medium trueZinc-100space-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
             >
               Monthly billing
             </button>
@@ -88,9 +93,9 @@ export default function Pricing({ products }) {
               type="button"
               className={`${
                 billingInterval === "year"
-                  ? "relative w-1/2 bg-trueZinc-700 border-trueZinc-800 shadow-sm text-white"
-                  : "ml-0.5 relative w-1/2 border border-transparent text-trueZinc-400"
-              } rounded-md m-1 py-2 text-sm font-medium whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
+                  ? "relative w-1/2 bg-zinc-700 border-zinc-800 shadow-sm text-trueZinc-100"
+                  : "ml-0.5 relative w-1/2 border border-transparent text-zinc-400"
+              } rounded-md m-1 py-2 text-sm font-medium trueZinc-100space-nowrap focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-opacity-50 focus:z-10 sm:w-auto sm:px-8`}
             >
               Yearly billing
             </button>
@@ -111,7 +116,7 @@ export default function Pricing({ products }) {
               <div
                 key={product.id}
                 className={classNames(
-                  "rounded-lg shadow-sm divide-y divide-trueZinc-600 bg-trueZinc-900",
+                  "rounded-lg shadow-sm divide-y divide-zinc-600 bg-zinc-900",
                   {
                     "border border-pink-500": subscription
                       ? product.name === subscription?.prices?.products?.name
@@ -120,17 +125,15 @@ export default function Pricing({ products }) {
                 )}
               >
                 <div className="p-6">
-                  <h2 className="text-2xl leading-6 font-semibold text-white">
+                  <h2 className="text-2xl leading-6 font-semibold text-trueZinc-100">
                     {product.name}
                   </h2>
-                  <p className="mt-4 text-trueZinc-300">
-                    {product.description}
-                  </p>
+                  <p className="mt-4 text-zinc-300">{product.description}</p>
                   <p className="mt-8">
-                    <span className="text-5xl font-extrabold text-trueZinc-100">
+                    <span className="text-5xl font-extrabold trueZinc-100">
                       {priceString}
                     </span>
-                    <span className="text-base font-medium text-trueZinc-100">
+                    <span className="text-base font-medium text-zinc-100">
                       /{billingInterval}
                     </span>
                   </p>
@@ -140,7 +143,7 @@ export default function Pricing({ products }) {
                     disabled={isLoading}
                     loading={priceIdLoading === price.id}
                     onClick={() => handleCheckout(price)}
-                    className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-trueZinc-900"
+                    className="mt-8 block w-full rounded-md py-2 text-sm font-semibold text-trueZinc-100 text-center hover:bg-zinc-500 rounded-half border-2 border-trueZinc-50"
                   >
                     {product.name === subscription?.prices?.products?.name
                       ? "Manage"
