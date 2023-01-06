@@ -30,11 +30,11 @@ export default function Home() {
         </SectionTitle>
         <SmartFX data={smartfxOne} />
         <SmartFX imgPos="right" data={smartfxTwo} />
-        <Faq />
         <Cta />
         <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
           Interested in knowing more about Sunset Ventures?
         </SectionTitle>
+        <Faq />
       </Layout>
       {/*<Faq />
       <Footer />
