@@ -1,6 +1,6 @@
 {
-  "name": "SunsetVentures",
-  "version": "0.1.0",
+  "name": "sunsetventures",
+  "version": "1.0.0",
   "description": "Sunset Ventures",
   "private": true,
   "scripts": {
@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "export": "next export",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
     "post-update": "yarn upgrade --latest"
   },
@@ -18,68 +19,33 @@
   "keywords": [
     "nextjs",
     "tailwindcss",
-    "free"
+    "daisyui"
   ],
   "author": "Sunset Ventures INC.",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "@auth0/nextjs-auth0": "^1.9.2",
     "@calcom/embed-react": "^1.0.9",
-    "@emotion/css": "^11.1.3",
-    "@emotion/react": "^11.4.0",
-    "@emotion/server": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
-    "@fortawesome/fontawesome-free": "^6.2.0",
-    "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "@fortawesome/free-regular-svg-icons": "^6.2.0",
-    "@fortawesome/free-solid-svg-icons": "^6.2.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@headlessui/react": "^1.2.0",
-    "@heroicons/react": "^1.0.1",
-    "@nextui-org/react": "^1.0.0-beta.10",
-    "@react-aria/ssr": "^3.4.0",
+    "@clerk/nextjs": "^4.21.15",
+    "@clerk/themes": "^1.7.5",
+    "@lottiefiles/react-lottie-player": "^3.5.3",
     "@stripe/stripe-js": "^1.46.0",
-    "@supabase/auth-helpers-nextjs": "^0.5.2",
-    "@supabase/auth-helpers-react": "^0.3.1",
-    "@supabase/auth-ui-react": "^0.2.6",
-    "@supabase/supabase-js": "^2.2.3",
-    "@tailwindcss/aspect-ratio": "^0.2.1",
-    "autoprefixer": "^10.0.4",
-    "chart.js": "^4.0.1",
-    "graphql": "^16.6.0",
-    "graphql-request": "^5.0.0",
-    "install": "^0.13.0",
-    "latest": "^0.2.0",
-    "next": "^13.0.3",
+    "@supabase/auth-helpers-nextjs": "^0.7.2",
+    "@supabase/supabase-js": "^2.26.0",
+    "next": "^13.4.4",
     "next-themes": "^0.2.1",
-    "npm": "^9.1.2",
-    "postcss": "^8.1.10",
-    "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-chartjs-2": "^5.0.1",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.39.2",
+    "react-hook-form": "^7.43.9",
     "tailwind": "^4.0.0",
-    "tailwindcss": "^3.2.4",
-    "typescript": "^4.8.4"
+    "tailwindcss": "^3.2.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@emotion/babel-plugin": "^11.10.5",
-    "@types/react": "latest",
-    "@typescript-eslint/parser": "latest",
-    "babel-plugin-macros": "^3.1.0",
-    "babel-plugin-twin": "^1.0.2",
-    "eslint": "8.27.0",
-    "eslint-config-next": "13.0.2",
-    "tailwindcss": "^3.2.4",
-    "twin.macro": "^3.0.0"
-  },
-  "babelMacros": {
-    "twin": {
-      "preset": "emotion",
-      "includeClassNames": true
-    }
+    "autoprefixer": "^10.4.14",
+    "daisyui": "^3.0.19",
+    "eslint": "^8.44.0",
+    "eslint-config-next": "^13.4.9",
+    "postcss": "^8.4.21",
+    "prettier": "^3.0.0",
+    "prettier-plugin-tailwindcss": "^0.4.0"
   }
 }
