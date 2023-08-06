@@ -77,7 +77,7 @@ export default function Faq() {
           <div className="collapse-title">Is Sunset Ventures hiring?</div>
           <div className="collapse-content text-xs">
             <p>Yes, we are!</p>
-            <p>Send us messsage.</p>
+            <p>Send us a messsage.</p>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function PopupForm() {
   const userName = useWatch({
     control,
     name: "name",
-    defaultValue: "Beer Guy",
+    defaultValue: "Joe Bucks",
   });
 
   const onSubmit = async (data, e) => {
@@ -129,7 +129,7 @@ export default function PopupForm() {
                     message: "Please enter a valid email",
                   },
                 })}
-                placeholder="beery@mcslurry.xyz"
+                placeholder="joe@bucks.com"
                 className={`w-full rounded-md border border-accent bg-neutral px-3 py-2 placeholder-netural focus:outline-none focus:ring   ${
                   errors.email
                     ? "border-error ring-error focus:border-error"

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useAuth } from "@clerk/nextjs";
+
 import Hero from "./components/hero";
 import Faq from "./components/faq";
 //import PopupWidget from "./components/popupWidget";  <PopupWidget />
