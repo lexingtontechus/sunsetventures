@@ -1,162 +1,104 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { useSession, useUser } from "@clerk/nextjs";
-import { createClient } from "@supabase/supabase-js";
+const products = [
+  {
+    name: "Vesper",
+    tagline: "Start your portfolio",
+    price: "$500 per month",
+    action: "Subscribe",
+    description:
+      "Wealth builder to create a recurring income stream. Focused on One (1) Forex pair.",
+    accountsize: "Account size between $5000-$25000.",
+    producturl: "/product-vesper.svg",
+  },
+  {
+    name: "Crescent",
+    tagline: "Supercharge your portfolio.",
+    price: "$1000 per month",
+    action: "Subscribe",
+    description: "Financial growth strategy. Focused on Two (2) Forex pairs.",
+    accountsize: "Account size between $25000-$50000.",
+    producturl: "/product-crescent.svg",
+  },
+  {
+    name: "Aurora",
+    tagline: "Diversified portfolio",
+    price: "$2500 per month",
+    action: "Subscribe",
+    description: "Focused on Three (3) Forex pairs & One (1) Crypto ETF.",
+    accountsize: "Account size between $50000-$100000.",
+    producturl: "/product-aurora.svg",
+  },
+  {
+    name: "Apollo",
+    tagline: "Performance portfolio",
+    price: "Contact To Discuss",
+    action: "Contact",
+    description: " Focused on Four (4) Forex pairs & Two (2) Crypto ETF.",
+    accountsize: "Accounts over $100000.",
+    producturl: "/product-apollo.svg",
+  },
+];
 
-const supabaseClient = async (supabaseAccessToken) => {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.NEXT_PUBLIC_SUPABASE_KEY,
-    {
-      global: { headers: { Authorization: `Bearer ${supabaseAccessToken}` } },
-    },
-  );
-  // set Supabase JWT on the client object,
-  // so it is sent up with all Supabase requests
-  return supabase;
-};
-
-export default function Products() {
-  const { isSignedIn, isLoading, user } = useUser();
-  const [products, setproducts] = useState(null);
-
+export default function ProductsPage() {
   return (
-    <main>
-      <div className="hero min-h-screen svg-products">
-        {/*<div className="hero-overlay"></div>*/}
+    <main className="mx-auto m-8 text-center">
+      <div className="hero min-h-screen svg-product">
         <div className="hero-content text-center">
-          <div className="max-w-lg">
-            <h1 className="mb-4 text-5xl font-bold uppercase">SVI Products</h1>
-            <p className="my-8 text-2xl font-semibold">
-              Investment Management.
-            </p>
+          <div className="max-w-xl">
+            <h1 className="mb-4 text-5xl font-bold uppercase">Products</h1>
+            <p className="my-8 text-2xl font-semibold">Managed Portfolios.</p>
           </div>
         </div>
       </div>
-
-      {isLoading ? (
-        <></>
-      ) : (
-        <main className="container mx-auto p-8">
-          <div className="">
-            {isSignedIn ? (
-              <>
-                {/*<AddProductForm products={products} setproducts={setproducts} />*/}
-                <div className="container mx-auto m-8">
-                  <ProductList products={products} setproducts={setproducts} />
-                </div>
-              </>
-            ) : (
-              <div className="">Sign in to create your product list!</div>
-            )}
-          </div>
-        </main>
-      )}
-    </main>
-  );
-}
-
-const ProductList = ({ products, setproducts }) => {
-  const { session } = useSession();
-  const [loadingproducts, setLoadingproducts] = useState(true);
-
-  // on first load, fetch and set products
-  useEffect(() => {
-    const loadproducts = async () => {
-      try {
-        setLoadingproducts(true);
-        const supabaseAccessToken = await session.getToken({
-          template: "sunsetventures",
-        });
-        const supabase = await supabaseClient(supabaseAccessToken);
-        const { data: products } = await supabase
-          .from("products")
-          .select("*,prices(*)")
-          .eq("active", true);
-        setproducts(products);
-      } catch (e) {
-        alert(e);
-      } finally {
-        setLoadingproducts(false);
-      }
-    };
-    loadproducts();
-  }, []);
-
-  // if loading, just show basic message
-  if (loadingproducts) {
-    return <div className="">Loading...</div>;
-  }
-
-  // display all the products
-  return (
-    <>
-      {products?.length > 0 ? (
+      <section className="mx-auto max-w-xl mt-8">
+        <h2 className="text-xl font-bold">
+          Our products are designed to fit our client profiles. Discover a
+          product that caters to and helps your financial portfolio grow.
+        </h2>
+      </section>
+      <section className="mx-auto m-8">
         <div className="flex flex-wrap gap-4 content-center justify-center">
-          {products.map((product) => (
+          {products.map((item) => (
             <div
-              key={product.id}
-              className="grow card w-48 bg-base-200 shadow-xl"
+              key={item.id}
+              className="grow card card-bordered bg-base-100 shadow-xl max-w-[300px] max-h-[500px] rounded-xl glass text-center"
             >
-              <figure>
-                <img
-                  src="/img/logo-sunset.svg"
-                  alt="Sunset Ventures"
-                  className="p-4 h-32"
-                />
+              <figure className="image-full w-full h-32">
+                <img src={item.producturl} alt={item.name} />
               </figure>
-              <div className="card-body">
-                <div class="card-title text-2xl font-bold text-accent">
-                  {product.name}
-                </div>
-                <div>{product.description}</div>
-                {/* <div>
-                    <pre>{JSON.stringify(product.metadata)}</pre>
+              <div className="card-body items-center text-center">
+                <h2 className="card-title font-semibold uppercase">
+                  {item.name}
+                </h2>
+                <h3 className="font-semibold text-primary-content">
+                  {item.tagline}
+                </h3>
+                <p className="text-sm text-primary-content">
+                  {item.description}
+                </p>
+                <p className="text-sm text-primary-content">
+                  {item.accountsize}
+                </p>
+                {/*<p className="font-semibold text-primary-content">
+                  {item.price}
+                </p>*/}
+                {/*<div className="card-actions">
+                  <button className="btn btn-accent glass">
+                    {item.action}
+                  </button>
           </div>*/}
-                <div className="card-actions justify-end">
-                  <button className="btn btn-neutral">Subscribe</button>
-                </div>
               </div>
             </div>
           ))}
         </div>
-      ) : (
-        <div className="text-accent">No products available</div>
-      )}
-    </>
-  );
-};
-
-function AddProductForm({ products, setproducts }) {
-  const { session } = useSession();
-  const [newProduct, setNewProduct] = useState("");
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (newProduct === "") {
-      return;
-    }
-
-    const supabaseAccessToken = await session.getToken({
-      template: "sunsetventures",
-    });
-    const supabase = await supabaseClient(supabaseAccessToken);
-    const { data } = await supabase
-      .from("products")
-      .insert({ title: newProduct, user_id: session.user.id })
-      .select();
-
-    setproducts([...products, data[0]]);
-    setNewProduct("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        onChange={(e) => setNewProduct(e.target.value)}
-        value={newProduct}
-      />
-      &nbsp;<button>Add Product</button>
-    </form>
+      </section>
+      <section className="mx-auto max-w-xl mb-8 pb-8">
+        <div className="text-base">
+          Sign In/Up and select a product. Our team will conduct an onboarding &
+          KYC process prior to approving your account.
+        </div>
+      </section>
+    </main>
   );
 }

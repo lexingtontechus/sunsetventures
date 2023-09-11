@@ -109,7 +109,7 @@ export default function PopupForm() {
                 }`}
               />
               {errors.name && (
-                <div className="invalid-feedback mt-1 text-sm text-error">
+                <div className="invalid-feedback mt-1 text-sm font-semibold text-error">
                   {errors.name.message}
                 </div>
               )}
@@ -138,13 +138,13 @@ export default function PopupForm() {
               />
 
               {errors.email && (
-                <div className="invalid-feedback mt-1 text-sm text-error">
+                <div className="invalid-feedback mt-1 text-sm font-semibold text-error">
                   {errors.email.message}
                 </div>
               )}
             </div>
 
-            <div className="mb-4">
+            <div className="mb-2">
               <label htmlFor="message" className="mb-2 block text-sm">
                 Your Message
               </label>
@@ -164,7 +164,7 @@ export default function PopupForm() {
                 required
               ></textarea>
               {errors.message && (
-                <div className="invalid-feedback mt-1 text-sm text-error">
+                <div className="invalid-feedback mt-1 text-sm font-semibold text-error">
                   {errors.message.message}
                 </div>
               )}

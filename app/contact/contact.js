@@ -7,10 +7,10 @@ const Contact = () => (
       <div className="hero-content text-center">
         <div className="max-w-lg">
           <h1 className="mb-5 text-5xl font-bold">
-            Diverse. Resilient. Sustainable.
+            Contact Us
           </h1>
           <p className="my-4 text-2xl font-smeibold">
-            Your story starts with us.
+            We appreciate your interest in Sunset Ventures.
           </p>
         </div>
       </div>

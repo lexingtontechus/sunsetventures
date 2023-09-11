@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 
 export default function About() {
@@ -7,17 +7,17 @@ export default function About() {
       <div className="hero min-h-screen svg-about">
         {/*<div className="hero-overlay"></div>*/}
         <div className="hero-content text-center">
-          <div className="max-w-lg">
+          <div className="max-w-xl">
             <h1 className="mb-4 text-5xl font-bold uppercase">
               Sunset Ventures Inc.
             </h1>
             <p className="my-8 text-2xl font-semibold">
-              Investment Management.
+              AI Investment Management.
             </p>
           </div>
         </div>
       </div>
-      <section className="container mx-auto px-8">
+      <section className="container min-h-screen mx-auto mb-8">
         <div className="justify-center mx-auto py-8">
           <Logo />
         </div>
@@ -49,18 +49,17 @@ export default function About() {
 
         <div className="my-8 border-t border-accent text-center"></div>
 
-        <div className="text-center">
+        <div className="max-w-xl mx-auto text-center">
           <h3 className="text-3xl font-semibold leading-normal mb-2">
-            Creating innovative investment strategies & growing our next-gen AI
-            Quant platform.
+            Creating investment strategies & innovating our AI Quant platform.
           </h3>
-          <p className="mb-4 text-lg leading-relaxed">
+          <p className="text-lg leading-relaxed">
             Our services span across,
-            <ul>
+            <ul className="text-sm pt-4">
               <li>Forex & Currency ETF.</li>
               <li>Crypto ETF.</li>
               <li>Quant Algorithm Development.</li>
-              <li>Whitelabel Algorithm Solutions.</li>
+              <li>Whitelabel Algorithm Platform.</li>
               <li>SmartFX Saas Solutions.</li>
             </ul>
           </p>

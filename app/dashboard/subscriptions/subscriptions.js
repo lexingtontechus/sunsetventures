@@ -28,9 +28,11 @@ export default function Subscriptions() {
         <div className="hero-content text-center">
           <div className="max-w-lg">
             <h1 className="mb-4 text-5xl font-bold uppercase">
-              Membership - {user.firstName} {user.lastName}
+              {user.firstName} {user.lastName}
             </h1>
-            <p className="my-8 text-2xl font-semibold">Sunset Ventures Inc.</p>
+            <p className="my-8 text-2xl font-semibold">
+              Sunset Ventures Inc. Membership.
+            </p>
           </div>
         </div>
       </div>
@@ -72,7 +74,8 @@ const ProductList = ({ products, setproducts }) => {
         const supabase = await supabaseClient(supabaseAccessToken);
         const { data: products } = await supabase
           .from("products")
-          .select("*,prices(*)")
+          .select("name, description,metadata")
+          .order("orderby", { ascending: true })
           .eq("active", true);
         setproducts(products);
       } catch (e) {
@@ -107,15 +110,20 @@ const ProductList = ({ products, setproducts }) => {
                 />
               </figure>
               <div className="card-body">
-                <div class="card-title text-2xl font-bold text-accent">
+                <div className="card-title text-2xl font-bold text-accent">
                   {product.name}
                 </div>
-                <div>{product.description}</div>
+                <div className="text-sm">{product.description}</div>
+                <ul className="text-xs list-disc list-inside">
+                  <li>Risk factor - {product.metadata.risk}</li>
+                  <li>Drawdown factor - {product.metadata.drawdown}</li>
+                  <li>Leverage factor - {product.metadata.leverage}</li>
+                </ul>
                 {/* <div>
                     <pre>{JSON.stringify(product.metadata)}</pre>
           </div>*/}
                 <div className="card-actions justify-end">
-                  <button className="btn btn-neutral">Subscribe</button>
+                  <button className="btn btn-accent">Subscribe</button>
                 </div>
               </div>
             </div>

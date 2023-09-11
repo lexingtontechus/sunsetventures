@@ -12,7 +12,7 @@ export default function Error({ error, reset }) {
   return (
     <div classsName="relative flex flex-col justify-center overflow-hidden m-8 min-h-screen">
       <h1 className="text-center text-5xl font-black uppercase mt-16">
-        Calculating Risk & Margins ...
+        Calculating Risk & Margins
       </h1>
       <Player
         autoplay

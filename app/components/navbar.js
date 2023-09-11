@@ -18,13 +18,13 @@ const Navbar = () => (
     </div>
     <div className="navbar-end flex-none">
       <div className="dropdown dropdown-end">
-        <label tabIndex={0} className="btn btn-ghost hover:bg-secondary">
+        <label tabIndex={0} className="btn btn-square btn-ghost">
           <Menu />
         </label>
         <SignedOut>
           <ul
             tabIndex={0}
-            className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-300 rounded-box w-52"
+            className="mt-2 p-0 shadow menu menu-sm dropdown-content bg-base-300 rounded-box w-52"
           >
             <li>
               <SignInButton
@@ -86,7 +86,7 @@ const Navbar = () => (
               >
                 Subscriptions
               </Link>
-</li>
+            </li>
             <li>
               <SignOutButton
                 afterSignOutUrl="/"
@@ -94,7 +94,7 @@ const Navbar = () => (
               />
             </li>
             <div className="flex flex-col w-full border-opacity-50">
-              <div className="divider">OR</div>
+              <div className="divider"></div>
             </div>
             <li>
               <Link
@@ -125,11 +125,16 @@ function Menu() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="2em"
-      viewBox="0 0 448 512"
-      className="fill-accent"
+      fill="none"
+      viewBox="0 0 24 24"
+      className="inline-block w-5 h-5 stroke-current"
     >
-      <path d="M64 80c-8.8 0-16 7.2-16 16V416c0 8.8 7.2 16 16 16H384c8.8 0 16-7.2 16-16V96c0-8.8-7.2-16-16-16H64zM0 96C0 60.7 28.7 32 64 32H384c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM152 232H296c13.3 0 24 10.7 24 24s-10.7 24-24 24H152c-13.3 0-24-10.7-24-24s10.7-24 24-24z" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M4 6h16M4 12h16M4 18h16"
+      ></path>
     </svg>
   );
 }

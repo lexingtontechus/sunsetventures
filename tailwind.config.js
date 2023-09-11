@@ -46,9 +46,9 @@ module.exports = {
         sunset: {
           primary: "#44403c", //stone700
           "primary-content": "#292524", //stone800
-          secondary: "#fb923c", //orange4400
+          secondary: "#f97316", //orange500
           "secondary-content": "#0369a1", //sky700
-          accent: "#fcd34d", //amber300
+          accent: "#fbbf24", //amber400
           neutral: "#78716c", //stone500
           "base-100": "#1e40af", //blue800
           info: "#38bdf8", //sky400

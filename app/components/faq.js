@@ -9,7 +9,7 @@ export default function Faq() {
       <div className="mx-auto w-full rounded-2xl">
         <div
           tabIndex={0}
-          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md"
+          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-neutral-content my-2 rounded-md"
         >
           <div className="collapse-title">
             What products & services does Sunset Ventures offer?
@@ -24,7 +24,7 @@ export default function Faq() {
         </div>
         <div
           tabIndex={1}
-          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md"
+          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-neutral-content my-2 rounded-md"
         >
           <div className="collapse-title">
             What commercial services does Sunset Ventures offer?
@@ -32,13 +32,13 @@ export default function Faq() {
           <div className="collapse-content text-xs">
             <p>
               We offer a white label service for our prioprietary or custom
-              developed products
+              developed products.
             </p>
           </div>
         </div>
         <div
           tabIndex={2}
-          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md"
+          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-neutral-content my-2 rounded-md"
         >
           <div className="collapse-title">Is Sunset Ventures hiring?</div>
           <div className="collapse-content text-xs">
@@ -50,7 +50,7 @@ export default function Faq() {
         </div>
         <div
           tabIndex={3}
-          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md"
+          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-neutral-content my-2 rounded-md"
         >
           <div className="collapse-title">Who is Sunset Ventures?</div>
           <div className="collapse-content text-xs">
@@ -62,7 +62,7 @@ export default function Faq() {
         </div>
         <div
           tabIndex={4}
-          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md"
+          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-neutral-content my-2 rounded-md"
         >
           <div className="collapse-title">Partnerships</div>
           <div className="collapse-content text-xs">
@@ -72,7 +72,7 @@ export default function Faq() {
         </div>
         <div
           tabIndex={5}
-          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-secondary-content my-2 rounded-md"
+          className="collapse collapse-arrow bg-neutral text-neutral-content focus:bg-secondary focus:text-neutral-content my-2 rounded-md"
         >
           <div className="collapse-title">Is Sunset Ventures hiring?</div>
           <div className="collapse-content text-xs">

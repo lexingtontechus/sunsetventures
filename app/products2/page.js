@@ -61,7 +61,7 @@ const ProductList = ({ products, setproducts }) => {
         const supabase = await supabaseClient(supabaseAccessToken);
         const { data: products } = await supabase
           .from("products")
-          .select("*,prices(*)")
+          .select("*,prices(*),risk:->metadata.risk")
           .eq("active", true);
         setproducts(products);
       } catch (e) {
@@ -100,6 +100,7 @@ const ProductList = ({ products, setproducts }) => {
                   {product.name}
                 </div>
                 <div>{product.description}</div>
+                <div>{product.risk}</div>
                 {/* <div>
                     <pre>{JSON.stringify(product.metadata)}</pre>
           </div>*/}
