@@ -22,40 +22,34 @@ export default function Subscriptions() {
   const [products, setproducts] = useState(null);
 
   return (
-    <main>
-      <div className="hero min-h-screen svg-products">
+    <>
+      <div className="hero min-h-screen svg-dashboard">
         {/*<div className="hero-overlay"></div>*/}
         <div className="hero-content text-center">
-          <div className="max-w-lg">
-            <h1 className="mb-4 text-5xl font-bold uppercase">
-              {user.firstName} {user.lastName}
+          <div className="max-w-md">
+            <h1 className="my-4 text-5xl font-bold uppercase text-center">
+              Sunset Ventures Subscription
             </h1>
-            <p className="my-8 text-2xl font-semibold">
-              Sunset Ventures Inc. Membership.
-            </p>
           </div>
         </div>
       </div>
-
       {isLoading ? (
         <></>
       ) : (
-        <main className="container mx-auto p-8">
-          <div className="">
-            {isSignedIn ? (
-              <>
-                {/*<AddProductForm products={products} setproducts={setproducts} />*/}
-                <div className="container mx-auto m-8">
-                  <ProductList products={products} setproducts={setproducts} />
-                </div>
-              </>
-            ) : (
-              <div className="">Sign in to create your product list!</div>
-            )}
-          </div>
-        </main>
+        <section className="container mx-auto pb-8 mb-8">
+          {isSignedIn ? (
+            <>
+              {/*<AddProductForm products={products} setproducts={setproducts} />*/}
+              <div className="container mx-auto m-8">
+                <ProductList products={products} setproducts={setproducts} />
+              </div>
+            </>
+          ) : (
+            <div className="">Sign in to create your product list!</div>
+          )}
+        </section>
       )}
-    </main>
+    </>
   );
 }
 
@@ -96,11 +90,11 @@ const ProductList = ({ products, setproducts }) => {
   return (
     <>
       {products?.length > 0 ? (
-        <div className="flex flex-wrap gap-4 content-center justify-center">
+        <div className="flex flex-wrap flex-grow gap-4 content-center justify-center">
           {products.map((product) => (
             <div
               key={product.id}
-              className="grow card w-48 bg-base-200 shadow-xl"
+              className="grow card w-64 bg-base-200 shadow-xl"
             >
               <figure>
                 <img
