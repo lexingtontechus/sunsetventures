@@ -2,7 +2,7 @@
 import SectionTitle from "./sectionTitle";
 export default function Faq() {
   return (
-    <div className="mx-auto my-2 flex w-full max-w-4xl flex-wrap items-center justify-between gap-5 rounded-xl bg-primary-100 p-8 text-primary-700 lg:flex-nowrap lg:px-12 lg:py-12">
+    <div className="mx-auto my-2 flex w-full max-w-4xl flex-wrap items-center justify-between gap-5 rounded-xl lg:flex-nowrap lg:px-12 lg:py-12 px-8">
       <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
         Interested in knowing more about Sunset Ventures?
       </SectionTitle>

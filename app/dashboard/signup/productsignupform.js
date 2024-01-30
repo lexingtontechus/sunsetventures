@@ -3,8 +3,12 @@ import React, { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Link from "next/link";
+import { useAuth, WithUser, useUser } from "@clerk/nextjs";
 
-export default function ContactForm() {
+export default function ProductSignUpForm() {
+  const { isLoaded, userId, sessionId, getToken } = useAuth();
+  const { user } = useUser();
+
   const {
     register,
     handleSubmit,
@@ -20,7 +24,13 @@ export default function ContactForm() {
   const userName = useWatch({
     control,
     name: "name",
-    defaultValue: "Joe Bucks",
+    defaultValue: "${user.fullName}",
+  });
+
+  const userid = useWatch({
+    control,
+    id: "id",
+    defaultValue: "${user.id}",
   });
 
   const onSubmit = async (data, e) => {
@@ -51,11 +61,14 @@ export default function ContactForm() {
         console.log(error);
       });
   };
-
+  if (!isLoaded || !userId) {
+    //return null;
+    redirect("/");
+  }
   return (
     <div className="justif-between h-full min-h-[250px] w-full flex-col overflow-hidden rounded-md">
       <div className="flex flex-col items-center justify-center p-5">
-        <h3 className="text-lg">How can we help?</h3>
+        <h3 className="text-lg">Select A Product</h3>
         <Player
           autoplay
           loop
@@ -92,12 +105,12 @@ export default function ContactForm() {
 
             <div className="mb-4">
               <label htmlFor="full_name" className="mb-2 block text-sm">
-                Full Name
+                Full Name {user.id}
               </label>
               <input
                 type="text"
                 id="full_name"
-                placeholder="Joe Smith"
+                placeholder="${user.fullName}"
                 {...register("name", {
                   required: "Full name is required",
                   maxLength: 80,
@@ -129,7 +142,7 @@ export default function ContactForm() {
                     message: "Please enter a valid email",
                   },
                 })}
-                placeholder="joesmith@sunsetventures.nft"
+                placeholder="${user.email}"
                 className={`w-full rounded-md border border-accent bg-neutral px-3 py-2 placeholder-netural focus:outline-none focus:ring   ${
                   errors.email
                     ? "border-error ring-error focus:border-error"
@@ -142,6 +155,36 @@ export default function ContactForm() {
                   {errors.email.message}
                 </div>
               )}
+            </div>
+
+            <div className="mb-2">
+              <fieldset id="fs-frm-selects">
+                <label className="block uppercase text-xs font-bold my-2">
+                  Inquiry type
+                  <select
+                    className="block w-full mt-2 text-sm h-8 px-2"
+                    name="inquiry"
+                    id="inquiry"
+                    required=""
+                  >
+                    <option value="Select" defaultValue="" disabled="">
+                      Select a product
+                    </option>
+                    <option value="Vesper">
+                      Vesper - Start Your Portfolio today
+                    </option>
+                    <option value="Crescent">
+                      Crescent - Supercharge Your Portfolio
+                    </option>
+                    <option value="Aurora">
+                      Aurora - Diversified Your Portfolio
+                    </option>
+                    <option value="Apollo">
+                      Aollo = Performance Portfolio
+                    </option>
+                  </select>
+                </label>
+              </fieldset>
             </div>
 
             <div className="mb-2">

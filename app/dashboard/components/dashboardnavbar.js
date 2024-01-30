@@ -21,7 +21,7 @@ const DashboardNavbar = () => (
         <label tabIndex={0} className="btn btn-ghost hover:bg-secondary">
           <Menu />
         </label>
-      {/*  <SignedOut>
+        {/*  <SignedOut>
           <ul
             tabIndex={0}
             className="mt-3 p-2 shadow menu menu-sm dropdown-content bg-base-300 rounded-box w-52"
@@ -61,7 +61,7 @@ const DashboardNavbar = () => (
             className="overlay mt-3 p-2 menu menu-sm dropdown-content bg-base-300 rounded-box w-52"
           >
             <li className="px-2 py-2 text-sm">
-              <UserButton afterSignOutUrl="/" />
+              <UserButton aftersignouturl="/" />
             </li>
             <li>
               <Link
@@ -81,7 +81,7 @@ const DashboardNavbar = () => (
             </li>
             <li>
               <SignOutButton
-                afterSignOutUrl="/"
+                aftersignouturl="/"
                 className="hover:text-secondary-focus block px-4 py-2 text-sm"
               />
             </li>

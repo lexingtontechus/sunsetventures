@@ -1,13 +1,9 @@
 "use client";
-import { useState } from "react";
-import { useAuth } from "@clerk/nextjs";
 
 import Hero from "./components/hero";
 import Faq from "./components/faq";
-//import PopupWidget from "./components/popupWidget";  <PopupWidget />
-import SectionTitle from "./components/sectionTitle";
 import Cta from "./components/cta";
-
+import SectionTitle from "./components/sectionTitle";
 const Home = () => {
   return (
     <>
@@ -21,8 +17,8 @@ const Home = () => {
           leverage potential trades and hedge risk.
         </p>
       </SectionTitle>
-      <Cta />
       <Faq />
+      <Cta />
     </>
   );
 };

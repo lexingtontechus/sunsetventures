@@ -8,7 +8,6 @@ module.exports = {
     "./pages/**/*.{html,js}",
     "./components/**/*.{html,js}",
   ],
-  darkMode: "class", // or 'media' or 'class'
 
   backgroundImage: {
     "profile-pattern":
@@ -17,40 +16,25 @@ module.exports = {
   },
   theme: {
     extend: {
-      colors: {
-        gray: colors.gray,
-        amber: colors.amber,
-        orange: colors.orange,
-        sky: colors.sky,
-        red: colors.red,
-        purple: colors.purple,
-        zinc: colors.zinc,
-        emerald: colors.emerald,
-        blue: colors.blue,
-        pink: colors.pink,
-      },
-    },
-    fontFamily: {
-      sans: ["Inter Tight", "Mukta", ...defaultTheme.fontFamily.sans],
-      stock: [defaultTheme.fontFamily.sans],
+      colors: {},
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [require("daisyui"), require("prettier-plugin-tailwindcss")],
+  plugins: [require("daisyui")],
   daisyui: {
     themes: [
       "garden",
       {
-        sunset: {
-          primary: "#44403c", //stone700
+        sunsetventures: {
+          primary: "#e0f2fe", //sky100
           "primary-content": "#292524", //stone800
-          secondary: "#f97316", //orange500
+          secondary: "#ea580c", //orange600
           "secondary-content": "#0369a1", //sky700
           accent: "#fbbf24", //amber400
           neutral: "#78716c", //stone500
-          "base-100": "#1e40af", //blue800
+          "base-100": "#075985", //sky800
           info: "#38bdf8", //sky400
           success: "#4ade80", //green400
           warning: "#fb923c", //orange400
@@ -58,7 +42,7 @@ module.exports = {
         },
       },
     ], // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
-    darkTheme: "sunset", // name of one of the included themes for dark mode
+    darkTheme: "sunsetventures", // name of one of the included themes for dark mode
     base: true, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components
     utils: true, // adds responsive and modifier utility classes

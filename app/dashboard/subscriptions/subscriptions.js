@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSession, useUser } from "@clerk/nextjs";
+import { useAuth, useSession, useUser } from "@clerk/nextjs";
 import { createClient } from "@supabase/supabase-js";
-
+//import SubscriptionForm from "./subscriptionform";
 const supabaseClient = async (supabaseAccessToken) => {
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -18,94 +18,108 @@ const supabaseClient = async (supabaseAccessToken) => {
 };
 
 export default function Subscriptions() {
-  const { isSignedIn, isLoading, user } = useUser();
-  const [products, setproducts] = useState(null);
-
+  const { user } = useUser();
+  const { userId, sessionId } = useAuth();
+  const [subscriptions, setSubscriptions] = useState(null);
   return (
-    <>
-      <div className="hero min-h-screen svg-dashboard">
-        {/*<div className="hero-overlay"></div>*/}
-        <div className="hero-content text-center">
-          <div className="max-w-md">
-            <h1 className="my-4 text-5xl font-bold uppercase text-center">
-              Sunset Ventures Subscription
-            </h1>
-          </div>
-        </div>
-      </div>
-      {isLoading ? (
-        <></>
-      ) : (
-        <section className="container mx-auto pb-8 mb-8">
-          {isSignedIn ? (
+    <div className="min-h-screen svg-dashboard">
+      {/*<div className="hero-overlay"></div>*/}
+      <div className="max-w-md text-center mx-auto p-8">
+        <h1 className="my-4 text-5xl font-bold uppercase text-center">
+          Sunset Ventures {user.firstName} Subscription
+        </h1>
+        <p>
+          {sessionId}
+          <br />
+          {userId}
+        </p>
+        <section className="container mx-auto p-8">
+          {/*<AddProductForm products={products} setproducts={setproducts} />*/}
+          {subscriptions ? (
             <>
-              {/*<AddProductForm products={products} setproducts={setproducts} />*/}
-              <div className="container mx-auto m-8">
-                <ProductList products={products} setproducts={setproducts} />
+              <h3 className="text-center font-semibold">
+                Select A Product To Subscribe
+              </h3>
+              <div className="max-w-2xl mx-auto justify-between my-4">
+                <p>Add Subs</p>
               </div>
             </>
           ) : (
-            <div className="">Sign in to create your product list!</div>
+            <>
+              <SubscriptionList
+                subscriptions={subscriptions}
+                setSubscriptions={setSubscriptions}
+              />
+              <p>Subs List</p>
+            </>
           )}
         </section>
-      )}
-    </>
+      </div>
+    </div>
   );
 }
 
-const ProductList = ({ products, setproducts }) => {
+const SubscriptionList = ({ subscriptions, setSubscriptions }) => {
   const { session } = useSession();
-  const [loadingproducts, setLoadingproducts] = useState(true);
-
-  // on first load, fetch and set products
+  const [loadingSubscriptions, setLoadingSubscriptions] = useState(true);
+  const { userId } = useAuth();
+  // on first load, fetch and set subscriptions
   useEffect(() => {
-    const loadproducts = async () => {
+    const loadSubscriptions = async () => {
       try {
-        setLoadingproducts(true);
+        setLoadingSubscriptions(true);
         const supabaseAccessToken = await session.getToken({
           template: "sunsetventures",
         });
         const supabase = await supabaseClient(supabaseAccessToken);
-        const { data: products } = await supabase
-          .from("products")
-          .select("name, description,metadata")
-          .order("orderby", { ascending: true })
-          .eq("active", true);
-        setproducts(products);
+        const { data: subscriptions } = await supabase
+          .from("user_subscription")
+          .select("user_subscription.*,products.*");
+        //.eq("user_subscription.product_id", "products.id");
+        //.eq("user_subscription.clerk_id", "user_2bT3vEA5eJl6YtkUL1Wa1urHkKt");
+        // ("user_subscription.product_id", "products.id"),
+        //);
+        //.order("orderby", { ascending: true })        //.eq("active", true);
+        setSubscriptions(subscriptions);
+        //alert(subscriptions);
       } catch (e) {
         alert(e);
       } finally {
-        setLoadingproducts(false);
+        setLoadingSubscriptions(false);
       }
     };
-    loadproducts();
-  }, []);
+    loadSubscriptions(subscriptions);
+  }, [subscriptions]);
 
   // if loading, just show basic message
-  if (loadingproducts) {
-    return <div className="">Loading...</div>;
+  if (loadingSubscriptions) {
+    return (
+      <div className="text-2xl font-semibold text-center m-8 uppercase">
+        Loading{" "}
+        <span className="loading loading-spinner loading-sm text-gold"></span>
+        <span className="loading loading-spinner loading-sm text-gold"></span>
+        <span className="loading loading-spinner loading-sm text-gold"></span>
+      </div>
+    );
   }
 
   // display all the products
   return (
-    <>
-      {products?.length > 0 ? (
-        <div className="flex flex-wrap flex-grow gap-4 content-center justify-center">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="grow card w-64 bg-base-200 shadow-xl"
-            >
-              <figure>
+    <div className="mb-8">
+      {subscriptions?.length > 0 ? (
+        <div className="flex flex-wrap flex-grow gap-4 content-center justify-center mb-8">
+          {subscriptions.map((subscription, index) => (
+            <div key={index} className="grow card w-64 bg-base-200 shadow-xl">
+              <figure className="image-full h-32">
                 <img
-                  src="/img/logo-sunset.svg"
+                  src={product.image}
                   alt="Sunset Ventures"
-                  className="p-4 h-32"
+                  className="w-full"
                 />
               </figure>
               <div className="card-body">
                 <div className="card-title text-2xl font-bold text-accent">
-                  {product.name}
+                  {subscription.product}
                 </div>
                 <div className="text-sm">{product.description}</div>
                 <ul className="text-xs list-disc list-inside">
@@ -113,52 +127,15 @@ const ProductList = ({ products, setproducts }) => {
                   <li>Drawdown factor - {product.metadata.drawdown}</li>
                   <li>Leverage factor - {product.metadata.leverage}</li>
                 </ul>
-                {/* <div>
-                    <pre>{JSON.stringify(product.metadata)}</pre>
-          </div>*/}
-                <div className="card-actions justify-end">
-                  <button className="btn btn-accent">Subscribe</button>
-                </div>
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="text-accent">No products available</div>
+        <div className="text-2xl font-semibold text-accent text-center">
+          No active subscriptions.
+        </div>
       )}
-    </>
+    </div>
   );
 };
-
-function AddProductForm({ products, setproducts }) {
-  const { session } = useSession();
-  const [newProduct, setNewProduct] = useState("");
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (newProduct === "") {
-      return;
-    }
-
-    const supabaseAccessToken = await session.getToken({
-      template: "sunsetventures",
-    });
-    const supabase = await supabaseClient(supabaseAccessToken);
-    const { data } = await supabase
-      .from("products")
-      .insert({ title: newProduct, user_id: session.user.id })
-      .select();
-
-    setproducts([...products, data[0]]);
-    setNewProduct("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input
-        onChange={(e) => setNewProduct(e.target.value)}
-        value={newProduct}
-      />
-      &nbsp;<button>Add Product</button>
-    </form>
-  );
-}

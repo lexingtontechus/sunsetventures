@@ -42,7 +42,7 @@ const products = [
 
 export default function ProductsPage() {
   return (
-    <main className="mx-auto text-center">
+    <main className="mx-auto m-8 text-center">
       <div className="hero min-h-screen svg-product">
         <div className="hero-content text-center">
           <div className="max-w-xl">
@@ -51,17 +51,17 @@ export default function ProductsPage() {
           </div>
         </div>
       </div>
-      <section className="mx-auto max-w-xl p-8">
+      <section className="mx-auto max-w-xl mt-8">
         <h2 className="text-xl font-bold">
           Our products are designed to fit our client profiles. Discover a
           product that caters to and helps your financial portfolio grow.
         </h2>
       </section>
-      <section className="mx-auto p-8">
+      <section className="mx-auto m-8">
         <div className="flex flex-wrap gap-4 content-center justify-center">
-          {products.map((item, index) => (
+          {products.map((item) => (
             <div
-              key={index}
+              key={item.id}
               className="grow card card-bordered bg-base-100 shadow-xl max-w-[300px] max-h-[500px] rounded-xl glass text-center"
             >
               <figure className="image-full w-full h-32">
@@ -93,7 +93,7 @@ export default function ProductsPage() {
           ))}
         </div>
       </section>
-      <section className="mx-auto max-w-xl mb-8 p-8">
+      <section className="mx-auto max-w-xl mb-8 pb-8">
         <div className="text-base">
           Sign In/Up and select a product. Our team will conduct an onboarding &
           KYC process prior to approving your account.

@@ -1,16 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
 
-export default function Error({ error, reset }) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
-  }, [error]);
-
+export default function Loading() {
   return (
-    <div classsName="relative flex flex-col justify-center overflow-hidden m-8 min-h-screen">
+    <div classsName="relative flex flex-col justify-center overflow-hidden px-8 min-h-screen mx-auto">
       <h1 className="text-center text-5xl font-black uppercase mt-16">
         Calculating Risk & Margins
       </h1>

@@ -1,14 +1,15 @@
+"use client";
 export default function SectionTitle(props) {
   return (
     <section
-      className={`flex w-full flex-col my-4 ${
+      className={`flex w-full flex-col px-8 my-4 ${
         props.align === "left" ? "" : "items-center justify-center text-center"
       }`}
     >
       {props.pretitle && (
-        <div className="text-md font-bold tracking-wider uppercase">
+        <h1 className="text-md font-bold tracking-wider uppercase">
           {props.pretitle}
-        </div>
+        </h1>
       )}
 
       {props.title && (
@@ -18,9 +19,9 @@ export default function SectionTitle(props) {
       )}
 
       {props.children && (
-        <p className="max-w-2xl py-4 text-lg leading-normal lg:text-xl xl:text-xl">
+        <h3 className="max-w-2xl py-4 text-lg leading-normal lg:text-xl xl:text-xl">
           {props.children}
-        </p>
+        </h3>
       )}
     </section>
   );
