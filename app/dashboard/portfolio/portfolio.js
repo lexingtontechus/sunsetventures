@@ -1,12 +1,15 @@
 "use client";
 import parse from "html-react-parser";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+//import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+//import { createClient } from "@supabase/supabase-js";
+import { createClient } from "../../utils/client";
+
 import { useEffect, useState } from "react";
 import { useAuth, useSession, useUser } from "@clerk/nextjs";
 
 export default function Portfolio() {
   const [subs, setSubs] = useState();
-  const supabase = createClientComponentClient();
+  const supabase = createClient();
   const { userId } = useAuth();
   useEffect(() => {
     const getData = async () => {

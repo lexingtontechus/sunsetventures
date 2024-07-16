@@ -3,24 +3,19 @@
 import { useForm, ValidationError } from "@formspree/react";
 import { Player } from "@lottiefiles/react-lottie-player";
 
-export default function ContactForm() {
-  const [state, handleSubmit] = useForm("xovaqreq");
+export default function ProductRegistration() {
+  const [state, handleSubmit] = useForm("xjkbvlkp");
   if (state.succeeded) {
-    return <p>Contact successful. We will be in touch soon.</p>;
+    return <p>Registration successful. We will be in touch soon.</p>;
   }
   return (
     <div className="justify-between h-full min-h-[250px] w-full flex-col overflow-hidden rounded-md">
-      <div className="flex flex-col items-center justify-center p-5">
-        <h3 className="text-lg">How can we help?</h3>
-        <Player
-          autoplay
-          loop
-          src="/json/contact.json"
-          style={{ height: "250px", width: "250px" }}
-        ></Player>
+      <div className="flex flex-col items-center justify-center p-4">
+        <h2 className="uppercase text-3xl">Register Your Interest</h2>
+
         <p className="opacity-50">We usually respond in a few hours.</p>
-        <div className="py-4 w-full max-w-lg">
-          <form onSubmit={handleSubmit} className="w-full">
+        <div className="pr-8 w-full">
+          <form onSubmit={handleSubmit}>
             <label className="form-control w-full">
               <div className="label">
                 <span className="label-text">First Name</span>
@@ -54,6 +49,7 @@ export default function ContactForm() {
                   className="input input-bordered input-accent text-secondary w-full"
                 />
               </div>
+
               <div className="label">
                 <span className="label-text">Email</span>
               </div>
@@ -78,7 +74,7 @@ export default function ContactForm() {
                 <span className="label-text">Contact Phone</span>
               </div>
               <div className="indicator w-full">
-                <span className="indicator-item badge text-xsbadge-warning">
+                <span className="indicator-item badge text-xs badge-warning">
                   Required
                 </span>
                 <input
@@ -90,14 +86,30 @@ export default function ContactForm() {
                   className="input input-bordered input-accent text-secondary w-full"
                 />
               </div>
-              <button
-                type="submit"
-                disabled={state.submitting}
-                className="btn btn-accent uppercase w-full my-4"
+              <div className="label">
+                <span className="label-text">Select A Product</span>
+              </div>
+
+              <select
+                name="product"
+                required=""
+                className="select select-bordered select-accent flex w-full text-secondary px-4"
               >
-                Register
-              </button>
+                <option disabled selected></option>
+                <option value="Apollo">Apollo</option>
+                <option value="Aurora">Aurora</option>
+                <option value="Crescent">Crescent</option>
+                <option value="Vesper">Vesper</option>
+              </select>
             </label>
+
+            <button
+              type="submit"
+              disabled={state.submitting}
+              className="btn btn-accent uppercase w-full mt-4"
+            >
+              Register
+            </button>
           </form>
         </div>
       </div>

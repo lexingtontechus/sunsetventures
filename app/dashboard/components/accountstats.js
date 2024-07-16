@@ -1,5 +1,4 @@
 "use client";
-import Subscriptions from "./subscriptions";
 export default function AccountStats() {
   return (
     <div className="stats stats-vertical lg:stats-horizontal text-center bg-base-200">
@@ -35,9 +34,6 @@ export default function AccountStats() {
         <span className="stat-desc">70.87% Ratio</span>
         <p className="stat-desc"></p>
       </div>
-      <>
-        <Subscriptions />
-      </>
     </div>
   );
 }

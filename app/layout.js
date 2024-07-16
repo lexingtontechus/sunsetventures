@@ -3,10 +3,10 @@ import { dark } from "@clerk/themes";
 import { Providers } from "./providers";
 import "./index.css";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({
+const robotomono = Roboto_Mono({
   subsets: ["latin"],
   display: "swap",
 });
@@ -43,21 +43,20 @@ export default function RootLayout({ children }) {
           logoImageUrl: "/logo_sunset.svg",
           logoPlacement: "inside",
           privacyPageUrl: "/privacy",
-          showOptionalFields: true,
           socialButtonsPlacement: "bottom",
           socialButtonsVariant: "iconButton",
           termsPageUrl: "/terms",
         },
       }}
     >
-      <html suppressHydrationWarning lang="en" className={inter.className}>
-        <body>
-          <Providers>
+      <html suppressHydrationWarning lang="en" className={robotomono.className}>
+        <Providers>
+          <body>
             <Navbar />
             <div>{children}</div>
             <Footer />
-          </Providers>
-        </body>
+          </body>
+        </Providers>
       </html>
     </ClerkProvider>
   );

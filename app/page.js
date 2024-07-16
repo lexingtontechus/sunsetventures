@@ -6,7 +6,7 @@ import Cta from "./components/cta";
 import SectionTitle from "./components/sectionTitle";
 const Home = () => {
   return (
-    <>
+    <div className="mb-20">
       <Hero />
       <SectionTitle pretitle="Our Story" title="Sunset Ventures">
         &quot;Our primary goal is to establish a wealth strategy for our clients
@@ -19,7 +19,7 @@ const Home = () => {
       </SectionTitle>
       <Faq />
       <Cta />
-    </>
+    </div>
   );
 };
 

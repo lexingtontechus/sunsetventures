@@ -1,8 +1,30 @@
 "use client";
 //import DashboardMenu from "./components/dashboardmenu";
-"use client";
-import { useAuth, WithUser, useUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import { useState, useEffect } from "react";
+import {
+  useAuth,
+  useSession,
+  useUser,
+  UserButton,
+  SignInButton,
+  SignUpButton,
+} from "@clerk/nextjs";
+
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseClient = async (supabaseAccessToken) => {
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_KEY,
+    {
+      global: { headers: { Authorization: `Bearer ${supabaseAccessToken}` } },
+    },
+  );
+  // set Supabase JWT on the client object,
+  // so it is sent up with all Supabase requests
+  return supabase;
+};
 
 export default function DashboardLayout({ children, params }) {
   const { isLoaded, userId, sessionId, getToken } = useAuth();
@@ -13,4 +35,14 @@ export default function DashboardLayout({ children, params }) {
     redirect("/");
   }
   return <>{children}</>;
+}
+{
+  /*
+  import { auth, currentUser } from "@clerk/nextjs/server";
+<div className="mx-auto text-center">{user?.firstName}</div>
+<div className="mx-auto">{user?.id}</div>
+
+  const { orgPermissions } = auth();
+  const user = await currentUser();
+ */
 }

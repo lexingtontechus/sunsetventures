@@ -27,7 +27,7 @@ export default function AddSubscription({ subscriptions, setSubscriptions }) {
     }
 
     const supabaseAccessToken = await session.getToken({
-      template: "supabase",
+      template: "sunsetventures",
     });
     const supabase = await supabaseClient(supabaseAccessToken);
     const { data } = await supabase.from("signups").insert({

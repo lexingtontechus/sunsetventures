@@ -15,7 +15,7 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen mx-auto justify-between svg-dashboard p-8 mb-8">
       <h1 className="mb-4 text-5xl font-bold uppercase text-pretty text-center">
-        Sunset Ventures {user.firstName} Dashboard
+        Sunset Ventures {user.firstName} Dashboard {user.id}
       </h1>
       <div className="flex flex-wrap px-8 mx-auto">
         <div className="mx-auto text-center">

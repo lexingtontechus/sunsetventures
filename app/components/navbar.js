@@ -7,17 +7,18 @@ import {
   SignInButton,
   SignOutButton,
 } from "@clerk/nextjs";
+
 import Link from "next/link";
 //import ThemeSwitch from "./themeSwitch";
 
 const Navbar = () => (
-  <div className="navbar">
+  <div className="navbar uppercase">
     <div className="navbar-start">
       <Link href="/">
         <Logo />
       </Link>
     </div>
-    <div className="navbar-center uppercase font-bold text-2xl bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-900 to-yellow-300 bg-clip-text text-transparent">
+    <div className="navbar-center font-bold text-2xl bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-amber-900 to-yellow-300 bg-clip-text text-transparent">
       {/*bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-400 bg-[length:200%_auto] bg-clip-text text-transparent*/}
       Sunset Ventures
     </div>
@@ -29,7 +30,7 @@ const Navbar = () => (
         <SignedOut>
           <ul
             tabIndex={0}
-            className="mt-2 p-0 menu menu-sm dropdown-content bg-base-300 rounded-box w-52"
+            className="mt-2 p-0 menu menu-sm dropdown-content bg-base-300 rounded-box w-52 hover:text-secondary-focus uppercase"
           >
             <li>
               <SignInButton
@@ -37,9 +38,7 @@ const Navbar = () => (
                 afterSignInUrl="/dashboard"
                 afterSignUpUrl="dashboard"
               >
-                <button className="hover:text-secondary-focus block px-4 py-2 text-sm">
-                  Sign in
-                </button>
+                <button className="block px-4 py-2 text-sm">SIGN IN</button>
               </SignInButton>
             </li>
             <li>
@@ -104,7 +103,9 @@ const Navbar = () => (
               <SignOutButton
                 afterSignOutUrl="/"
                 className="hover:text-secondary-focus block px-4 text-sm"
-              />
+              >
+                SIGN OUT
+              </SignOutButton>
             </li>
             <div className="flex flex-col w-full border-opacity-50">
               <div className="divider"></div>

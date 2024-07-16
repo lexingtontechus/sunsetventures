@@ -1,4 +1,5 @@
 "use client";
+import ProductRegistration from "./productregistration";
 
 const products = [
   {
@@ -94,8 +95,30 @@ export default function ProductsPage() {
         </div>
       </section>
       <section className="mx-auto max-w-xl mb-8 p-8">
+        {/* Open the modal using document.getElementById('ID').showModal() method */}
+        <div
+          className="btn btn-accent uppercase my-4"
+          onClick={() => document.getElementById("register").showModal()}
+        >
+          Register
+        </div>
+        <dialog id="register" className="modal">
+          <div className="modal-box">
+            <p className="py-4">
+              <ProductRegistration />
+            </p>
+            <div className="modal-action">
+              <form method="dialog">
+                {/* if there is a button in form, it will close the modal */}
+                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+                  ✕
+                </button>
+              </form>
+            </div>
+          </div>
+        </dialog>
         <div className="text-base">
-          Sign In/Up and select a product. Our team will conduct an onboarding &
+          Register and select a product. Our team will conduct an onboarding &
           KYC process prior to approving your account.
         </div>
       </section>

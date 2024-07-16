@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { useAuth, useSession, useUser } from "@clerk/nextjs";
-import { createClient } from "@supabase/supabase-js";
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createClerkSupabaseClient } from "../../utils/client";
+//import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 
 export default function Subscriptions() {
   const { user } = useUser();
@@ -23,7 +23,7 @@ const SubscriptionList = ({ subs, setSubs }) => {
         setLoadingSubs(true);
         // const supabaseAccessToken = await session.getToken({          template: "sunsetventures",        });
         //        const supabase = await supabaseClient(supabaseAccessToken);
-        const supabase = createClientComponentClient();
+        const supabase = createClerkSupabaseClient();
         const { data } = await supabase
           .from("user_subscriptions")
           .select("product_id, clerk_id,products(*)")

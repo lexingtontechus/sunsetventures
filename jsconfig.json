@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/utils/*": ["utils/*"]
+    },
+    "include": ["next.config.mjs", "tailwind.config.js", "**/*.js", "**/*.jsx"],
+    "exclude": ["node_modules"]
+  }
+}

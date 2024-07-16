@@ -12,7 +12,7 @@ function AddSubscription({ subscriptions, setSubscriptions }) {
     }
 
     const supabaseAccessToken = await getToken({
-      template: "supabase",
+      template: "sunsetventures",
     });
     const supabase = await supabaseClient(supabaseAccessToken);
     const { data } = await supabase
@@ -30,7 +30,7 @@ function AddSubscription({ subscriptions, setSubscriptions }) {
         onChange={(e) => setNewSubscriptions(e.target.value)}
         value={newSubscriptions}
       />
-      &nbsp;<button>Subscribe</button>
+      &nbsp;<div className="btn">Subscribe</div>
     </form>
   );
 }
